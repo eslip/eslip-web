@@ -1,0 +1,85 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /-->
+    <link rel="stylesheet" href="bower_components/bootswatch/superhero/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="eslipApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+
+        <div class="header">
+            <ul class="nav nav-pills pull-right" ng-controller="NavbarCtrl">
+                <li ng-class="{'active':getClass('/home')}">
+                    <a ng-href="#/home">Inicio</a>
+                </li>
+                <li ng-class="{'active':getClass('/documentation')}">
+                    <a ng-href="#/documentation">Documentaci&oacute;n</a>
+                </li>
+                <li>
+                    <a ng-href="https://github.com/eslip/eslip" target="_blank">Github</a>
+                </li>
+                <li  ng-class="{'active':getClass('/support')}">
+                    <a ng-href="#/support">Soporte</a>
+                </li>
+                <!--li><a ng-href="https://groups.google.com/forum/#!forum/eslip-plugin" target="_blank">Support</a></li-->
+            </ul>
+            <h3 class="text-muted">ESLIP Plugin</h3>
+        </div>
+
+        <a href="https://github.com/eslip/eslip" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+        <!-- Add your site or application content here -->
+        <div class="" ng-view=""></div>
+       
+        <div class="footer">
+            <p>ESLIP Plugin team: Nicol&aacute;s Burghi [nicoburghi@gmail.com] - Mart&iacute;n Estigarribia [martinestiga@gmail.com]</p>
+        </div>
+
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/navbar.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/documentation.js"></script>
+        <script src="scripts/controllers/support.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div class="well" ng-init="selected=1">
+
+    <ul>
+        <li ng-click="selected=1">1. Descarga del Plugin</li>
+        <li ng-click="selected=2">2. Instalaci&oacute;n</li>
+        <li ng-click="selected=3">3. Manual de Usuario</li>
+        <li ng-click="selected=4">4. Registro de Aplicaciones</li>
+    </ul>
+</div>
+
+<div class="row marketing" ng-show="selected==1">
+    <h4>1. Descarga del Plugin</h4>
+    <div>
+        <p>
+        Como primer paso se debe descargar la última versión del plugin ESLIP haciendo click <a ng-href="https://github.com/eslip/eslip/archive/v0.1.zip">aqu&iacute;</a> o desde <a ng-href="https://github.com/eslip/eslip">Github</a>.
+        </p>
+        <p>
+            Otra forma de obtener el plugin es directamente desde GIT realizando la clonación del proyecto. Esto se puede llevar a cabo mediante el comando:
+        </p>
+        <p>
+            <b>$ git clone git://github.com/eslip/eslip.git</b>
+        </p>
+        <p>
+            Como resultado, de cualquiera de las alternativas de descarga antes mencionadas, se debería obtener esta estructura de archivos:
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;eslip/<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── example/<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── docs/<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── eslip/<br/>
+        </p>
+        <p>
+            Dentro de la carpeta example/ se encuentra un ejemplo de como funciona el plugin. En la misma se incluye un archivo index.php en donde se encuentra el código que renderiza el widget de login. También podemos encontrar un archivo llamado login.php que es el archivo donde se retorna una vez realizado todo el procesamiento por parte del plugin  y donde se muestra cómo recuperar los datos que fueron obtenidos del proveedor de identidad.
+        </p>
+        <p>
+            En la carpeta docs/ se encuentra la documentación del código fuente de los archivos más importantes del plugin. Dicha documentacion fue generada con la herramienta phpDocumentor (http://www.phpdoc.org/). Esta documentación ofrece una visión en profundidad del proyecto orientada tanto a desarrolladores como a consumidores y contribuyentes.
+        </p>
+        <p>
+            Por último, en la carpeta eslip/ se encuentra el plugin. Esta es la carpeta que se debe alojar en el sitio web donde se desea integrar el plugin.
+        </p>
+    </div>
+
+</div>
