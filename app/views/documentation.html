@@ -2,41 +2,333 @@
 
     <ul>
         <li ng-click="selected=1">1. Descarga del Plugin</li>
-        <li ng-click="selected=2">2. Instalaci&oacute;n</li>
-        <li ng-click="selected=3">3. Manual de Usuario</li>
-        <li ng-click="selected=4">4. Registro de Aplicaciones</li>
+        <li ng-click="selected=2">2. Subir el Plugin al Servidor</li>
+        <li ng-click="selected=3">3. Configuración del Plugin</li>
+        <li ng-click="selected=4">4. Wizard de Configuración</li>
+        <li ng-click="selected=5">5. Módulo de Administración del Plugin</li>
     </ul>
 </div>
 
-<div class="row marketing" ng-show="selected==1">
-    <h4>1. Descarga del Plugin</h4>
-    <div>
-        <p>
-        Como primer paso se debe descargar la última versión del plugin ESLIP haciendo click <a ng-href="https://github.com/eslip/eslip/archive/v0.1.zip">aqu&iacute;</a> o desde <a ng-href="https://github.com/eslip/eslip">Github</a>.
-        </p>
-        <p>
-            Otra forma de obtener el plugin es directamente desde GIT realizando la clonación del proyecto. Esto se puede llevar a cabo mediante el comando:
-        </p>
-        <p>
-            <b>$ git clone git://github.com/eslip/eslip.git</b>
-        </p>
-        <p>
-            Como resultado, de cualquiera de las alternativas de descarga antes mencionadas, se debería obtener esta estructura de archivos:
-            <br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;eslip/<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── example/<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── docs/<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── eslip/<br/>
-        </p>
-        <p>
-            Dentro de la carpeta example/ se encuentra un ejemplo de como funciona el plugin. En la misma se incluye un archivo index.php en donde se encuentra el código que renderiza el widget de login. También podemos encontrar un archivo llamado login.php que es el archivo donde se retorna una vez realizado todo el procesamiento por parte del plugin  y donde se muestra cómo recuperar los datos que fueron obtenidos del proveedor de identidad.
-        </p>
-        <p>
-            En la carpeta docs/ se encuentra la documentación del código fuente de los archivos más importantes del plugin. Dicha documentacion fue generada con la herramienta phpDocumentor (http://www.phpdoc.org/). Esta documentación ofrece una visión en profundidad del proyecto orientada tanto a desarrolladores como a consumidores y contribuyentes.
-        </p>
-        <p>
-            Por último, en la carpeta eslip/ se encuentra el plugin. Esta es la carpeta que se debe alojar en el sitio web donde se desea integrar el plugin.
-        </p>
-    </div>
+<div id="download" class="row marketing" ng-show="selected==1">
+    <h3>1. Descarga del Plugin</h3>
+    <p>
+    Como primer paso se debe descargar la última versión del plugin ESLIP haciendo click <a ng-href="https://github.com/eslip/eslip/archive/v0.1.zip">aqu&iacute;</a> o desde <a ng-href="https://github.com/eslip/eslip">GitHub</a>. Una vez realizada la descarga, se procede a descomprimir el archivo.
+    </p>
+    <p>
+        Otra forma de obtener el plugin es directamente desde GIT realizando la clonación del proyecto. Esto se puede llevar a cabo mediante el comando:
+    </p>
+    <p>
+        <pre><code>$ git clone git://github.com/eslip/eslip.git</code></pre>
+    </p>
+    <p>
+        Como resultado, de cualquiera de las alternativas de descarga antes mencionadas, se debería obtener esta estructura de archivos:
+        <br/>
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;eslip/<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── example/<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── docs/<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── eslip/<br/>
+    </p>
+    <p>
+        Dentro de la carpeta <code>example/</code> se encuentra un ejemplo de como funciona el plugin. En la misma se incluye un archivo <code>index.php</code> en donde se encuentra el código que renderiza el widget de Social Login. Allí también se encuentra un archivo llamado <code>login.php</code> que es el archivo a donde se retorna una vez realizado todo el procesamiento por parte del plugin  y donde se muestra cómo recuperar los datos que fueron obtenidos del proveedor de identidad.
+    </p>
+    <p>
+        Por otro lado, en la carpeta <code>docs/</code> se encuentra la documentación del código fuente de los archivos más importantes del plugin. Dicha documentación fue generada con la herramienta <a ng-href="http://www.phpdoc.org" target="_blank">phpDocumentor</a>. Esta documentación ofrece una visión en profundidad del proyecto orientada tanto a desarrolladores como a consumidores y contribuyentes.
+    </p>
+    <p>
+        Por último, en la carpeta <code>eslip/</code> se encuentra el plugin. Esta es la carpeta que se debe alojar en el sitio web donde se desea integrar el plugin.
+    </p>
+</div>
+<div id="upload_to_server" class="row marketing" ng-show="selected==2">
+    <h3>2. Subir el Plugin al Servidor</h3>
+    <p>
+        Como se mencionó anteriormente, una vez descargado el plugin se debe proceder a colocar la carpeta <code>eslip/</code> (la cual contiene el código del plugin) en el servidor web correspondiente. Se puede alojar en cualquier ruta. Por ejemplo si se aloja en la raíz del sitio web <i>www.example.com</i> la ruta sería <i>www.example.com/eslip</i>.
+    </p>
+</div>
+<div id="configuration" class="row marketing" ng-show="selected==3">
+    <h3>3. Configuración del Plugin</h3>
+    <p>
+        Una vez subido el plugin al servidor, ya se encuentra apto para ser configurado. Para ello se debe escribir en la barra de direcciones del navegador la ruta donde fue ubicada la carpeta del plugin y de esta manera se accede al administrador.
+    </p>
+    <p>
+        Al ser la primera vez que se ingresa al administrador, se debe ejecutar el Wizard de configuración. Esta acción se lleva a cabo haciendo clic en el link del cartel informativo del formulario para ingrsar al administrador.
+        <img height="400px" style="margin-top: 20px;" src="images/first_login.png" alt="First Login">
+    </p>
+</div>
+<div id="wizard" class="row marketing" ng-show="selected==4">
+    <h3>4. Wizard de Configuración</h3>
+    <h4>Selección de lenguaje</h4>
+    <p>
+        Como ya se mencionó, ESLIP se encuentra disponible en inglés y español, aunque es posible extender y agregar más lenguajes. Por ello, en el primer paso del wizard de configuración, se presenta ante el usuario una ventana emergente con la lista de lenguajes soportados por el plugin. En este paso se debe seleccionar el idioma de visualización que será utilizado tanto en el wizard como el administrador.
+    </p>
+    <h4>Creación del usuario administrador</h4>
+    <p>
+        Se deben establecer las credenciales para acceder luego al administrador de forma segura.
+    </p>
+    <p>
+        Los datos requeridos son nombre de usuario y una contraseña. Cabe destacar que el plugin sólo permite crear un único usuario, esto se debe a la búsqueda de sencillez que promueve el plugin.
+    </p>
+    <h4>Configuraciones generales</h4>
+    <p>
+        En este paso se establecen las URL’s que son utilizadas internamente por el plugin para poder realizar correctamente las distintas comunicaciones con los proveedores de identidad. Es de vital importancia que no haya errores en estos datos. Para facilitar la configuración, ESLIP sugiere las URL’s en base a la ruta donde se encuentre alojado el plugin, pero por varios motivos puede ser que estas no sean las URL’s deseadas.
+    </p>
+    <h4>Configuración de los proveedores de identidad</h4>
+    <p>
+        En esta sección se muestran los proveedores de identidad que están dados de alta en el plugin. La primera vez que se ejecuta el wizard, se visualizará la lista de proveedores que ya vienen precargados con el plugin. Inicialmente se encuentra cargada la configuración de los siguientes proveedores de identidad:
+    </p>
+    <ul>
+        <li>Dropbox</li>
+        <li>Facebook</li>
+        <li>Flickr</li>
+        <li>Foursquare</li>
+        <li>Github</li>
+        <li>Google</li>
+        <li>LinkedIn</li>
+        <li>OpenID</li>
+        <li>Twitter</li>
+        <li>Windows</li>
+        <li>Yahoo!</li>
+    </ul>
+    <p>
+        En este paso se deben activar los proveedores de identidad que se desee utilizar como medio de autenticación para el sitio web. De todas formas esto puede modificarse luego desde el módulo de administración del plugin, se podrán activar o desactivar los proveedores según sea necesario.
+    </p>
+    <p>
+        Con excepción de OpenID, cada proveedor de identidad requerirá para su activación que se cree una aplicación externa, es decir una aplicación propia del proveedor de identidad, para, de esta manera contar con un medio de vinculación entre el sitio web y la API propia del proveedor de identidad.
+    </p>
+    <p>
+        Estas aplicaciones de los proveedores de identidad exponen una gran cantidad de métodos y propiedades para que diferentes aplicaciones web puedan establecer un canal de comunicación, el cual puede ser utilizado tanto para autenticación como para recolección de datos y comportamientos de los usuarios. En el caso particular de ESLIP, estas aplicaciones son utilizadas para autenticar, o sea para corroborar que un usuario es quien dice ser, y para recolectar datos del perfil de usuario.
+    </p>
+    <p>
+        Para la activación de cada proveedor de identidad, exceptuando OpenID, ESLIP solicita los siguientes datos:
+        <dl class="dl-horizontal">
+            <dt>ID de Cliente:</dt>
+            <dd>Identificador provisto por la API OAuth para la aplicación externa creada en el proveedor de identidad correspondiente.</dd>
+            <dt>Secreto de Cliente:</dt>
+            <dd>Clave secreta provista por la API OAuth para la aplicación externa creada en el proveedor de identidad correspondiente.</dd>
+            <dt>Scopes:</dt>
+            <dd>Recursos que se desean obtener y que su propietario, quien se autentica a través del proveedor de identidad, debe autorizar para que sean concedidos.</dd>
+        </dl>
+    </p>
+    <p>
+        Para el caso particular del proveedor OpenID, se solicitan los siguientes datos:
+        <dl class="dl-horizontal">
+            <dt>Scopes Requeridos:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad. Deben estar separados por coma.</dd>
+            <dt>Scopes Opcionales:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad pero que serán opcionales. El proveedor de identidad puede o no retornarlos. Los diferentes scopes que se pueden solicitar pueden ser consultados en <a ng-href="http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List" target="_blank">http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List</a>. De cada scope se debe descartar la primer parte correspondiente a “<i>http://openid.net/schema/</i>” la cual se repite en todos los scopes, y solamente se debe utilizar lo que se encuentra a continuación.</dd>
+        </dl>
+    </p>
+    <p>
+        Cabe destacar que para poder completar estos datos, el desarrollador debe recolectar sus valores por fuera del contexto del plugin ESLIP, por medio de aplicaciones que se deben crear en cada proveedor de identidad. Se puede encontrar información detallada sobre dónde y cómo crear estas aplicaciones externas en la seccion <b>10. Creación de aplicaciones en los proveedores de identidad</b> de esta documentación.
+    </p>
+    <h4>Widget de Social Login</h4>
+    <p>
+        En este paso se configuran los parámetros necesarios para personalizar el widget que será presentado en el sitio web con los botones de login correspondientes a los proveedores de identidad habilitados. Aquí se establece el tamaño del widget, si se debe o no mostrar el texto del botón y la disposición de los botones dentro de él, configurando cantidad de columnas y cantidad de filas. 
+    </p>
+    <p>
+        A su vez, se facilita al desarrollador una vista previa del widget en donde se ven reflejados los valores a medida que éstos van siendo establecidos.
+    </p>
+    <h4>Código a incluir en el sitio web</h4>
+    <p>
+        Como último paso, luego de realizar las configuraciones necesarias y activar los proveedores de identidad se muestra el bloque de código que debe ser copiado y pegado en las secciones del sitio web donde se desea visualizar el widget se Social Login.
+    </p>
+    <p>
+        Para una explicación más detallada se podría dividir el código en dos partes. Por un lado se encuentra las referencias a una hoja de estilos y un archivo JavaScript que hacen que se visualice el widget. Se recomienda que las mismas se incluyan en la sección <code>&lt;head&gt;</code> de las páginas HTML donde se desee presentar el widget. Por otro lado, un elemento HTML <code>&lt;div&gt;</code> con el identificador “<b>eslip-plugin</b>” que debe ser incluido en la parte del documento HTML donde se quiere que aparezca el widget. El plugin necesita que el elemento “<b>eslip-plugin</b>” esté presente en la página para poder mostrar el widget.
+    </p>
 
+    <p>
+        <div class="highlight">
+            Notar que todas estas configuraciones también están disponibles en el administrador del plugin. El wizard es una herramienta que provee ESLIP para configurar por primera vez el plugin de una manera sencilla, aunque opcionalmente puede ejecutar el wizard cuantas veces quiera, con la salvedad de que la primera vez que se ejecute deberá configurar las credenciales para acceder al módulo de administración.
+        </div>
+    </p>
+
+</div>
+<div id="admin" class="row marketing" ng-show="selected==5">
+    <h3>5. Módulo de Administración del Plugin</h3>
+    <p>
+        Como se mencionó anteriormente, para poder acceder al administrador, primero se debe ejecutar el wizard de configuración para poder establecer las credenciales de ingreso. Una vez hecho esto, en la pantalla de login del administrador se debe ingresar el nombre de usuario y la contraseña elegida.
+    </p>
+    <p>
+        Una vez dentro del administrador se pueden observar cinco secciones: 
+    </p>
+    <ul>
+        <li>Configuraciones generales</li>
+        <li>Proveedores de identidad</li>
+        <li>Configuraciones de usuario</li>
+        <li>Configuración de idiomas</li>
+        <li>Widget de Social Login</li>
+    </ul>
+    <h4>Configuraciones generales</h4>
+    <p>
+        Aquí se pueden modificar los valores que se configuraron en la sección con el mismo nombre dentro del wizard. Se establecen las URL’s que se van a utilizar internamente en el plugin para poder realizar correctamente las distintas comunicaciones con los proveedores de identidad.
+    </p>
+    <p>
+        Es de vital importancia que no haya errores en estos datos. Desde esta sección también se puede modificar el lenguaje de la interfaz del plugin y de su administrador.
+    </p>
+    <p>
+        A continuación se detallan los datos que se pueden configurar en esta sección:
+        <dl class="dl-horizontal">
+            <dt>URL del Sitio:</dt>
+            <dd>URL del sitio web en donde está incluyendo el plugin. Por ejemplo: <i>http://www.example.com</i>.</dd>
+            <dt>URL de retorno:</dt>
+            <dd>URL a donde se debería retornar una vez realizada la identificación. Aquí el desarrollador procesará los datos devueltos por el plugin como resultado de su interacción con el proveedor de identidad. Los datos son enviados a esta URL por el método HTTP POST además de ser almacenados en la Sesión PHP. Por ejemplo: <i>http://www.example.com/index.php</i>.</dd>
+            <dt>URL del Plugin ESLIP:</dt>
+            <dd>URL donde se encuentra alojado el plugin dentro de su sitio web. Por ejemplo: <i>http://www.example.com/eslip/</i>.</dd>
+            <dt>Lenguaje:</dt>
+            <dd>Aquí debe seleccionar el idioma en que quiera que se muestren los textos de la interfaz del plugin y del administrador.</dd>
+        </dl>
+    </p>
+    <h4>Proveedores de identidad</h4>
+    <p>
+        En esta sección se administran los proveedores de identidad de ESLIP. Aquí se puede editar o eliminar los existentes como también agregar nuevos proveedores.
+    </p>
+    <p>
+        Esta sección se divide en dos vistas. Por un lado, una estándar, en donde se pueden realizar las mismas acciones que en el wizard: activar y desactivar proveedores de identidad y establecer los principales parámetros de cada uno. Y por otro lado, una vista avanzada, en donde por cada proveedor de identidad se da la posibilidad de editar todos sus parámetros o también de eliminarlo del plugin.
+    </p>
+    <p>
+        Se debe recordar que con excepción de OpenID, cada proveedor de identidad requerirá para su activación que se cree una aplicación externa, es decir una aplicación propia del proveedor de identidad, para, de esta manera contar con un medio de vinculación entre el sitio web y la API propia del proveedor de identidad.
+    </p>
+    <p>
+        A continuación se detalla por cada vista, todos los parametro disponibles que se pueden configurar.
+    </p>
+    <h5>Vista Estándar</h5>
+    <p>
+        Como se dijo recientemente, esta vista es la misma a la presentada en el wizard de configuración inicial. 
+    </p>
+    <p>
+        Para la activación de cada proveedor de identidad, exceptuando OpenID, ESLIP solicita los siguientes datos:
+        <dl class="dl-horizontal">
+            <dt>ID de Cliente:</dt>
+            <dd>Identificador provisto por la API OAuth para la aplicación externa creada en el proveedor de identidad correspondiente.</dd>
+            <dt>Secreto de Cliente:</dt>
+            <dd>Clave secreta provista por la API OAuth para la aplicación externa creada en el proveedor de identidad correspondiente.</dd>
+            <dt>Scopes:</dt>
+            <dd>Recursos que se desean obtener y que su propietario, quien se autentica a través del proveedor de identidad, debe autorizar para que sean concedidos.</dd>
+        </dl>
+    </p>
+    <p>
+        Para el caso particular del proveedor OpenID, se solicitan los siguientes datos:
+        <dl class="dl-horizontal">
+            <dt>Scopes Requeridos:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad. Deben estar separados por coma.</dd>
+            <dt>Scopes Opcionales:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad pero que serán opcionales. El proveedor de identidad puede o no retornarlos. Los diferentes scopes que se pueden solicitar pueden ser consultados en <a ng-href="http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List" target="_blank">http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List</a>. De cada scope se debe descartar la primer parte correspondiente a “<i>http://openid.net/schema/</i>” la cual se repite en todos los scopes, y solamente se debe utilizar lo que se encuentra a continuación.</dd>
+        </dl>
+    </p>
+    <p>
+        <h5>Vista Avanzada</h5>
+        Para configurar cada proveedor de identidad, se debe hacer clic en el botón “Editar” correspondiente al proveedor. A continuación se abrirá una ventana emergente con campos para la personalización de los siguientes parámetros:
+    </p>
+    <p>
+        Parámetros disponibles para todos los proveedores de identidad:
+        <dl class="dl-horizontal">
+            <dt>Scopes Requeridos:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad. Deben estar separados por coma.</dd>
+            <dt>Scopes Opcionales:</dt>
+            <dd>Atributos que se desean requerir al proveedor de identidad pero que serán opcionales. El proveedor de identidad puede o no retornarlos. Los diferentes scopes que se pueden solicitar pueden ser consultados en <a ng-href="http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List" target="_blank">http://openid.net/specs/openid-attribute-properties-list-1_0-01.html#Prop_List</a>. De cada scope se debe descartar la primer parte correspondiente a “<i>http://openid.net/schema/</i>” la cual se repite en todos los scopes, y solamente se debe utilizar lo que se encuentra a continuación.</dd>
+        </dl>
+    </p>
+    <p>
+        Para configurar cada proveedor de identidad, se debe hacer clic en el botón “Editar” correspondiente al proveedor. A continuación se abrirá una ventana emergente con campos para la personalización de los siguientes parámetros:
+    </p>
+    <p> 
+        Parámetros disponibles para todos los proveedores de identidad:
+        <dl class="dl-horizontal">
+            <dt>Texto del botón:</dt>
+            <dd>Texto que aparece en el botón del proveedor de identidad correspondiente dentro del widget.</dd>
+            <dt>Activo:</dt>
+            <dd>Con esta opción puede activar o desactivar este proveedor de identidad para que no sea visible en el widget.</dd>
+            <dt>Recurso utilizado como identificador único del usuario:</dt>
+            <dd>Nombre de la clave en el objeto que retorna el proveedor de identidad como respuesta a la petición de recursos, la cual se utiliza para acceder al identificador único del propietario de los recursos. Si la clave con el nombre ingresado existe en el objeto devuelto por el proveedor de identidad, su valor es enviado a la URL de retorno establecida por el desarrollador en un objeto junto al resto de los recursos obtenidos bajo la clave “id”. Este objeto también es almacenado en la sesión PHP.</dd>
+        </dl>
+    </p>
+    <p>
+        Parámetros disponibles sólo para OpenID:
+        <dl class="dl-horizontal">
+            <dt>URL del formulario:</dt>
+            <dd>Dirección relativa dentro de la carpeta del plugin donde se encuentra el formulario donde el el usuario ingresa su identificador OpenID.</dd>
+            <dt>Autenticación Inmediata:</dt>
+            <dd>Aquí se establece si la autenticación se va a realizar utilizando el modo inmediato.</dd>
+        </dl>
+    </p>
+    <p>
+        Parámetros disponibles sólo para proveedores de identidad que utilizan el protocolo OAuth:
+        <dl class="dl-horizontal">
+            <dt>ID:</dt>
+            <dd>Identificador único para cada proveedor de identidad. ESLIP ofrece una lista de identificadores precargados. El plugin provee un estilo de botón junto con el correspondiente icono para cada identificador.</dd>
+            <dt>Nombre:</dt>
+            <dd>Nombre para identificar el proveedor de identidad dentro del administrador del plugin.</dd>
+            <dt>Versión de OAuth:</dt>
+            <dd>Versión del protocolo que soporta el servidor OAuth del proveedor de identidad.</dd>
+            <dt>URL del punto de entrada para la solicitud del token inicial:</dt>
+            <dd>URL del servidor OAuth del proveedor de identidad para solicitar el token inicial cuando trabajamos con servidores OAuth 1.0 y 1.0a.</dd>
+            <dt>URL del punto de entrada para la autorización:</dt>
+            <dd>URL del formulario de login del proveedor de identidad. Se redirigirá al propietario del recurso a dicha URL para que inicie sesión y autorice o no a la aplicación creada en dicho proveedor de identidad a acceder a los recursos solicitados.</dd>
+            <dt>URL del punto de entrada para la obtención del token de acceso:</dt>
+            <dd>URL del servidor OAuth del proveedor de identidad que retornará el token de acceso.</dd>
+            <dt>Parámetros para la obtención de recursos del usuario:</dt>
+            <dd>Cadena con los parámetros que se le envían a la API del proveedor de identidad, entre los cuales debe estar el token de acceso.</dd>
+            <dt>Parámetros en la cabecera de la petición:</dt>
+            <dd>Establece si la API del proveedor de identidad requiere, a la hora de realizar la petición del token inicial, que se le envíen los parámetros en la cabecera de la petición HTTP. Si no se está seguro de ello dejar la opción en “Si”.</dd>
+            <dt>Parámetros en la URL:</dt>
+            <dd>Establece si la API del proveedor de identidad requiere, a la hora de realizar la petición del token inicial, que se le envíen los parámetros en la URL. Si no se está seguro de ello dejar la opción en “Si”.</dd>
+            <dt>Parámetro adicional en la respuesta a la petición del token de acceso:</dt>
+            <dd>Señala si la API OAuth del proveedor de identidad devuelve un parámetro extra en la respuesta a la petición de token de acceso necesario para la autenticación.</dd>
+            <dt>Nombre del parámetro adicional:</dt>
+            <dd>Nombre de la llave dentro de la respuesta a la petición de token de acceso para acceder al parámetro extra en caso de que el proveedor de identidad devuelva uno. Un ejemplo es Yahoo!, el cual devuelve el parámetro “xoauth_yahoo_guid” necesario para obtener los recursos solicitados.</dd>
+            <dt>URL del punto de entrada para la obtención de recursos del usuario:</dt>
+            <dd>URL que proporciona la API OAuth del proveedor de identidad a la cual se le realiza la petición para obtener los recursos requeridos.</dd>
+        </dl>
+    </p>
+    <h4>Configuraciones de usuario</h4>
+    <p>
+        Desde aquí se pueden modificar las credenciales para iniciar sesión en el administrador del plugin. Es decir, se pueden modificar el nombre de usuario y la contraseña que fueron establecidas desde el wizard de configuración.
+    </p>
+    <h4>Configuración de idiomas</h4>
+    <p>
+        En esta sección se pueden agregar nuevos lenguajes para la visualización de textos del plugin. Para realizar esta acción, primero se debe descargar la plantilla o template. Cada línea de dicha plantilla se compone de la siguiente manera:
+        <pre><code>etiqueta = “texto”</code></pre>
+    </p>
+    <p>
+        Se deben traducir los textos de cada etiqueta al nuevo idioma que se desea incorporar, sin alterar los nombres de las etiquetas y guardar el archivo con el correspondiente <a ng-href="http://reference.sitepoint.com/html/lang-codes" target="_blank">código de lenguaje ISO de dos letras</a> en minúsculas.
+    </p>
+    <p>
+        Por ejemplo si se traducen los textos a ruso el archivo debe nombrarse <kbd>ru</kbd>. Una vez que se tiene el archivo traducido y guardado con el correspondiente nombre se lo debe subir al servidor desde esta misma sección y completar el campo con el nombre del nuevo idioma. Siguiendo con el ejemplo, se debería completar el campo con “Ruso”.
+    </p>
+    <h4>Widget de Social Login</h4>
+    <p>
+        En esta sección se configuran los parámetros necesarios para personalizar el widget que será presentado en el sitio web con los botones de login correspondientes a los proveedores de identidad habilitados. Aquí se establece el tamaño del widget y la disposición de los botones dentro de él, entre otras opciones. A su vez, se facilita al desarrollador una vista previa del widget en donde se ven reflejados los valores a medida que éstos van siendo establecidos. A continuación se describen los parámetros disponibles para la personalización:
+        <dl class="dl-horizontal">
+            <dt>Ancho del widget:</dt>
+            <dd>Ancho que tendrá el widget. Se puede establecer en pixeles o en porcentaje dependiendo la necesidad de cada desarrollador.</dd>
+            <dt>Cantidad de columnas:</dt>
+            <dd>Cantidad de columnas de botones que se mostrarán en el widget. Es importante el valor que se establece aquí, ya que a partir de ésta cantidad se calcula el ancho de cada botón que se muestra en el widget.</dd>
+            <dt>Cantidad de filas:</dt>
+            <dd>Cantidad de filas de botones que se mostrarán en el widget. Si se opta por la opción “auto”, todos los botones se mostrarán en forma vertical obedeciendo la cantidad de columnas fijadas sin importar la cantidad de filas utilizadas. Mientras que, si se establece un valor mayor o igual a uno y la cantidad de botones a mostrar excede la capacidad del widget, acorde a la cantidad de columnas y filas configuradas, se generará una especie de galería con paneles horizontales deslizantes, en donde por cada panel se exhibirá el número de botones correspondientes.</dd>
+            <dt>Texto en los botones:</dt>
+            <dd>Define si se mostrará en los botones solo el icono del correspondiente proveedor de identidad o se mostrará junto a él un texto descriptivo.</dd>
+        </dl>
+    </p>
+    <p>
+        Por otro lado, en esta sección también se encuentra el código HTML que se debe incluir en el sitio web para visualizar el widget de Social Login. El mismo se corresponde con el que se muestra en el último paso del wizard configuración.
+    </p>
+    <h4>Botones de proveedores</h4>
+    <p>
+        En esta sección se pueden administrar, es decir, editar y borrar, todos los identificadores existentes en el plugin, así como también agregar nuevos. 
+    </p>
+    <p>
+        Cada identificador corresponde a un proveedor de identidad y está compuesto por un ID que identifica al proveedor de identidad (el cual debe ser único), su logo, y los colores de texto y de fondo que se utilizarán a la hora de mostrar su botón en el widget.
+    </p>
+        Tanto cuando se desea editar un identificador como cuando se desea crear uno nuevo, se abre un pequeño formulario con los campos detallados a continuación:
+        <dl class="dl-horizontal">
+            <dt>ID:</dt>
+            <dd>Debe ser único y se utilizará para identificar cada una de los proveedores de identidad.</dd>
+            <dt>Logo:</dt>
+            <dd>Logo del proveedor de identidad que está asociado a este identificador.</dd>
+            <dt>Color de texto:</dt>
+            <dd>Color que será utilizado en el texto dentro del botón del proveedor de identidad que se muestra en el widget cuando éste está activo.</dd>
+            <dt>Color de fondo:</dt>
+            <dd>Color que será utilizado como fondo del botón del proveedor de identidad que se muestra en el widget cuando éste está activo.</dd>
+        </dl>
+    </p>
 </div>
