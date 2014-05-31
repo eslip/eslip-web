@@ -1,12 +1,12 @@
 <div class="well" ng-init="selected=1">
-
-    <ul>
-        <li ng-click="selected=1">1. Descarga del Plugin</li>
-        <li ng-click="selected=2">2. Subir el Plugin al Servidor</li>
-        <li ng-click="selected=3">3. Configuración del Plugin</li>
-        <li ng-click="selected=4">4. Wizard de Configuración</li>
-        <li ng-click="selected=5">5. Módulo de Administración del Plugin</li>
-    </ul>
+    <ol>
+        <li ng-click="selected=1">Descarga del Plugin</li>
+        <li ng-click="selected=2">Subir el Plugin al Servidor</li>
+        <li ng-click="selected=3">Configuración del Plugin</li>
+        <li ng-click="selected=4">Wizard de Configuración</li>
+        <li ng-click="selected=5">Módulo de Administración del Plugin</li>
+        <li ng-click="selected=6">Creación de aplicaciones en proveedores de identidad</li>
+    </ol>
 </div>
 
 <div id="download" class="row marketing" ng-show="selected==1">
@@ -330,5 +330,173 @@
             <dt>Color de fondo:</dt>
             <dd>Color que será utilizado como fondo del botón del proveedor de identidad que se muestra en el widget cuando éste está activo.</dd>
         </dl>
+    </p>
+</div>
+<div id="admin" class="row marketing" ng-show="selected==6">
+    <h3>6. Creación de aplicaciones en proveedores de identidad</h3>
+    
+    <h4>Google</h4>
+    <p>
+        <ol>
+            <li>
+                Vaya a la <a ng-href="https://cloud.google.com/console/project" target="_blank">Google Cloud Console</a> y cree un nuevo proyecto. (Tendrá que iniciar sesión con una cuenta de Google, si todavía no lo hizo). Para ello haga clic en el botón rojo "CREAR PROYECTO" en la parte superior izquierda.
+            </li>
+            <li>
+                En la ventana emergente "Crear Proyecto", ingrese la siguiente configuración: 
+                <dl class="dl-horizontal">
+                    <dt>Nombre del proyecto:</dt>
+                    <dd>Normalmente este es el nombre de su sitio web.</dd>
+                    <dt>Identificación de proyectos:</dt>
+                    <dd>Este es un ID único para su proyecto dentro de Google. Una buena opción es su nombre de dominio.</dd>
+                </dl>
+                Para finalizar haga clic en "Crear".
+            </li>
+            <li>
+                Una vez creado, será redirigido a la página "Descripción General" de su proyecto. Allí haga clic en el enlace "API y Autenticación" en el menú de la izquierda. 
+            </li>
+            <li>
+                Dentro de la sección "API y Autenticación" desplácese por la página y busque la fila "Google+ API". Haga clic en el botón "OFF" al lado de él para convertirlo en 'ON'. Aparecerá una ventana emergente para que acepte las condiciones del servicio, tilde el casillero y haga clic en “Aceptar”.
+            </li>
+            <li>
+                En el menú de la izquierda, haga clic en "API y autenticación” y en el submenú que se despliega diríjase a “Credenciales”. Haga clic en el botón rojo "CREAR ID DE CLIENTE NUEVO" en la sección de OAuth en la parte superior izquierda. 
+            </li>
+            <li>
+                En la ventana emergente deje la opción "Aplicación Web" seleccionada. En el cuadro "Orígenes de Javascript Autorizados", ingrese el dominio del sitio web. Si usted tiene https habilitado en su sitio, ingresar los dos dominios, de la forma:
+                <pre><code>http://www.example.com<br />https://www.example.com</code></pre>
+                En la sección de "URI de redireccionamiento autorizado", debe ingresar la ruta al archivo del plugin que procesa los parámetros que retorna el proveedor de identidad. Dicho archivo es “eslip_oauth.php”. Para formar dicha ruta añádele a la URL del plugin la ruta  “/eslip_oauth.php”. Un ejemplo de cómo le deberia quedar sería: “http://www.example.com/eslip/eslip_oauth.php”. Si usted tiene https habilitado en su sitio, u otras formas de acceder a su dominio (como con www y sin www), añada todos ellos aquí.
+
+                Una vez completados los dos campos haga clic en “Crear ID de cliente”
+
+            </li>
+            <li>
+                Una vez creado aparecerá una nueva sección denominada "ID de cliente para aplicaciones web". Aquí ya tiene disponible el ID de cliente y el Secreto de cliente para ser utilizados en la configuración del plugin.
+            </li>
+            <li>
+                Una vez que el registro de su aplicación se ha terminado, usted puede ir al sub-menú “Pantalla de Autorización” dentro de "API y Autenticación" para configurar cómo se va a ver el diálogo de aprobación de la aplicación que se va a mostrar a los usuarios al intentar autenticarse utilizando sus cuentas de Google / Google+. En esta pantalla, usted debe asegurarse de que haya una dirección de correo electrónico válida y el nombre del sitio web correcto. Otros campos son opcionales pero pueden proporcionar a los usuarios más detalles sobre su sitio web como el logotipo y la política de privacidad, etc. Cuanto más información usted pueda proporcionar aquí, más fácil será que los usuarios finales puedan identificar y confiar en su aplicación, y concederle el acceso solicitado. Una vez que haya proporcionado la información necesaria, guardar y cerrar la página.
+            </li>
+        </ol>
+    </p>
+    <p>
+        <div class="highlight">
+            <a ng-href="https://developers.google.com/+/api/oauth#scopes" target="blank">Scopes para Google</a>
+        </div>
+    </p>
+    <h4>Facebook</h4>
+    <p>
+        <ol>
+            <li>
+                Vaya al <a ng-href="https://developers.facebook.com" target="_blank">centro de desarrolladores de Facebook</a>. Dirigirse al menú superior y dentro de “Aplicaciones” haga clic en “Crear nueva aplicación”. (Tendrá que iniciar sesión con la cuenta de Facebook con la que desee ser propietario de la aplicación, si todavía no lo hizo).
+                Nota: Facebook requiere que todas las aplicaciones sean propiedad de gente real. No se puede crear una aplicación con la cuenta de una “Página de Facebook”.
+            </li>
+            <li>
+                En la ventana emergente complete los campos: en el primero debe ingresar el nombre del sitio web, en el segundo un identificador para la aplicación y en el tercero elija la opción “Aplicaciones para Páginas”. Para finalizar haga clic en el botón “Creación de aplicaciones”.
+            </li>
+            <li>
+                Aquí ya tiene a disposición el Identificador de aplicación (ID de cliente) y el App Secret (Secreto de cliente) para ser utilizados en la configuración del plugin. Para ver el App Secret debe hacer click en el botón mostrar y posiblemente Facebook le pida que ingrese nuevamente su contraseña por cuestiones de seguridad.
+            </li>
+            <li>
+                Dirigirse en el menú izquierdo a la sección “Configuración”. Allí haga clic en el botón “Agregar Plataforma” y en las opciones que se nos ponen a disposición elegir Sitio Web. Aparecerá un cuadro donde deberá completar el campo “Site URL” con la dirección del sitio web donde integremos Eslip plugin. Una vez escrita la URL del sitio haga clic en el botón “Guardar Cambios”.
+            </li>
+            <li>
+                Por último vaya a la sección “Status & Review” para habilitar el uso de la aplicación. Haga clic en el botón "No" al lado de él para convertirlo en Sí. Aparecerá una ventana emergente preguntando si esta seguro de activarla, haga clic en “Confirmar”.
+            </li>
+        </ol>
+    </p>
+    <p>
+        <div class="highlight">
+            <a ng-href="https://developers.facebook.com/docs/reference/login/" target="blank">Scopes para Facebook</a>
+        </div>
+    </p>
+    <h4>Twitter</h4>
+    <p>
+        
+1. Vaya a https://dev.twitter.com/apps y cree una nueva aplicación. (Usted tendrá que iniciar sesión con una cuenta de Twitter, si no está ya). Para ello haga clic en el botón “Create a new application”.
+
+2. Complete los campos obligatorios, como el nombre de la aplicación y la descripción. Ponga el dominio del sitio web en el campo Website. En el campo Callback URL añada la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “http://www.example.com/eslip/eslip_oauth.php”.
+
+3. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Consumer key (ID de cliente) y Consumer secret (Secreto de cliente) para ser utilizadas en la configuración del plugin.
+</p>
+
+<h4>Yahoo!</h4>
+<p>
+1. Vaya a https://developer.apps.yahoo.com/dashboard/ y cree una nueva aplicación. (Usted tendrá que iniciar sesión con una cuenta de Yahoo, si no está ya). Para ello haga clic en el botón “Create a project”.
+
+2. Complete los campos obligatorios, como el nombre de la aplicación y la descripción. Ponga el dominio del sitio web en el campo Home Page URL. Ajuste el tipo de aplicación a “Basada en Web”. Ingrese los datos de contacto del desarrollador los cuales son el nombre y la dirección de correo electrónico.
+
+3. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Consumer key (ID de cliente) y Consumer secret (Secreto de cliente) para ser utilizadas en la configuración del plugin.
+</p>
+    <p>
+        <div class="highlight">
+            <a ng-href="https://developer.yahoo.com/social/rest_api_guide/usercard-resource.html" target="blank">Scopes para Yahoo!</a>
+        </div>
+    </p>
+
+
+<h4>Dropbox</h4>
+<p>
+1. Vaya a https://www.dropbox.com/developers/apps y cree una nueva aplicación. (Usted tendrá que iniciar sesión con una cuenta de Dropbox, si no está ya). Para ello haga clic en el botón “Create app”.
+
+2. Elija la opción “Dropbox API app”. Luego la opción “Datastores only” e ingrese el nombre de su sitio web y haga clic en “Create app”.
+
+3. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: App key (ID de cliente) y App secret (Secreto de cliente) para ser utilizadas en la configuración del plugin.
+En esta misma pantalla complete el campo OAuth redirect URIs con la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “https://www.example.com/eslip/eslip_oauth.php”. Es necesario que su sitio trabaje bajo un dominio seguro https://. Una vez completo el campo haga clic en el botón “Add”.
+
+4. Como último paso para poder habilitar la aplicación para que la utilice todo el mundo debe probarla primero el creador de la aplicación. Una vez aceptada la aplicacion por el dueño vuelva a ingresar a https://www.dropbox.com/developers/apps, elija la aplciacion creada y haga clic en el boton “Apply for production”.
+</p>
+
+<h4>Flickr</h4>
+<p>
+1. Vaya a http://www.flickr.com/services/apps/create/apply y seleccione la opción “Solicitar una clave no comercial”. (Usted tendrá que iniciar sesión con una cuenta de Flickr, si no está ya).
+
+2. Complete los campos obligatorios, como el nombre de la aplicación y la descripción. Luego acepte los terminos de uso y haga clic en “Enviar”.
+
+3. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Clave (ID de cliente) y Secreto (Secreto de cliente) para ser utilizadas en la configuración del plugin. En esta pantalla diríjase a “Editar flujo de autenticación para esta aplicación”.
+
+4. Aquí complete la descripción del sitio web, elija el tipo de aplicación “aplicación web” y por ultimo complete el campo “URL de devolución de llamada” con la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “https://www.example.com/eslip/eslip_oauth.php”. Si quiere puede agregar el logo del sitio web. Esta información aparecerá en la ventana donde los usuarios tienen que aceptar la aplicación. Cuantos mas datos, mas confiaran en la aplicación. Para finalizar haga clic en “Save Changes”.
+</p>
+
+<h4>Foursquare</h4>
+<p>
+1. Vaya a https://foursquare.com/developers/register (Usted tendrá que iniciar sesión con una cuenta de Foursquare, si no está ya) y complete los campos obligatorios, como el nombre de la aplicación, el campo “Welcome page URL” con el dominio del sitio web y “Redirect URI” con la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “https://www.example.com/eslip/eslip_oauth.php”. Para finalizar haga clic en “Guardar cambios”.
+
+2. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Client ID (ID de cliente) y Client secret (Secreto de cliente) para ser utilizadas en la configuración del plugin.
+</p>
+
+<h4>GitHub</h4>
+
+<p>
+1. Vaya a https://github.com/settings/applications/new (Usted tendrá que iniciar sesión con una cuenta de Github, si no está ya) y complete los campos obligatorios, como el nombre de la aplicación, el campo “Homepage URL” con el dominio del sitio web y “Authorization callback URL” con la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “https://www.example.com/eslip/eslip_oauth.php”. Para finalizar haga clic en “Register application”.
+
+2. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Client ID (ID de cliente) y Client secret(Secreto de cliente) para ser utilizadas en la configuración del plugin.
+</p>
+    <p>
+        <div class="highlight">
+            <a ng-href="https://developer.github.com/v3/oauth/#scopes" target="blank">Scopes para GitHub</a>
+        </div>
+    </p>
+
+
+<h4>Windows Live</h4>
+<p>
+1. Vaya a https://account.live.com/developers/applications/create (Usted tendrá que iniciar sesión con una cuenta de Windows Live, si no está ya) y complete los campos obligatorios, como el nombre de la aplicación. Para finalizar haga clic en “Acepto”.
+
+2. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada (Client ID (ID de cliente) y Client secret (Secreto de cliente) para ser utilizadas en la configuración del plugin. Como último paso es necesario completar el campo “Dominio de redirección” con el dominio del sitio web. Para finalizar haga clic en “Guardar”.
+</p>
+    <p>
+        <div class="highlight">
+            <a ng-href="http://msdn.microsoft.com/en-us/library/live/hh243646.aspx" target="blank">Scopes para Windows Live</a>
+        </div>
+    </p>
+
+<h4>LinkedIn</h4>
+<p>
+1. Vaya a https://www.linkedin.com/secure/developer?newapp= (Usted tendrá que iniciar sesión con una cuenta de LinkedIn, si no está ya) y complete todos los campos obligatorios. Complete el campo “URL de redireccionamiento Aceptar en OAuth 1.0” con la URL del plugin y a continuación agregue “/eslip_oauth.php”. Un ejemplo de cómo podría llegar a quedar sería: “https://www.example.com/eslip/eslip_oauth.php”.  Para finalizar haga clic en “Añadir Aplicación”.
+
+2. Una vez registrado, ya tiene disponibles las credenciales de la aplicación creada: Credencial del usuario Oauth (ID de cliente) y Secreto del usuario OAuth (Secreto de cliente) para ser utilizadas en la configuración del plugin.
+</p>
+    <p>
+        <div class="highlight">
+            <a ng-href="https://developer.linkedin.com/documents/authentication#granting" target="blank">Scopes para LinkedIn</a>
+        </div>
     </p>
 </div>

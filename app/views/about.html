@@ -1,3 +1,123 @@
-<div class="row marketing">
-    <h4>Sobre ESLIP</h4>
+<div class="well" ng-init="selected=1">
+    <ul>
+        <li ng-click="selected=1">Sobre ESLIP</li>
+        <li ng-click="selected=2">¿Cómo surgió?</li>
+        <li ng-click="selected=3">¿Por qué utilizarlo?</li>
+        <li ng-click="selected=4">Licencia MIT</li>
+        <li ng-click="selected=5">Contribuir con el proyecto</li>
+    </ul>
+</div>
+
+<div class="row marketing" ng-show="selected==1">
+    <h3>Sobre ESLIP</h3>
+    <p>
+    	Easy Social Login Integration Plugin (ESLIP), en español Plugin Simple para Integración de Social Login, permite integrar fácilmente Social Login a un sitio web, tal como lo indica su nombre. El principal objetivo de esta herramienta es permitir a los desarrolladores web incorporar de forma sencilla un widget de inicio de sesión que ofrezca la posibilidad de que los usuarios se autentiquen en un sitio web por medio de las cuentas de redes sociales y servicios en línea más populares, como por ejemplo Facebook, Twitter, Google, entre otros.
+	</p>
+	<p>
+		ESLIP es un software de código abierto. Por lo tanto los usuarios pueden estudiar, modificar y mejorar su diseño e implementación mediante la disponibilidad de su código fuente, el cual se encuentra alojado en <a ng-href="https://github.com/eslip/eslip" target="_blank">GitHub</a>, un entorno gratuito de desarrollo en colaboración para proyectos de software libre, con el fin de que, este plugin siga creciendo por la colaboración de la comunidad.
+	</p>
+	<p>
+		Si bien existen en la web, diferentes tipos de plugins que brindan Social Login, ESLIP se diferencia del resto por su premisa de sencillez de integración para desarrolladores web. ESLIP está preparado para ser integrado y configurado en simples pasos. Asimismo, cuenta con la gran ventaja de poder fácilmente incorporar proveedores de identidad a la configuración para adaptarse a los cambios repentinos que abundan hoy día en el mundo web.
+	</p>
+	<p>
+		ESLIP cuenta con un wizard de configuración que guía al desarrollador para que en pocos pasos pueda configurar su widget de Social Login. A su vez cuenta con un módulo de administración desde el cual es posible agregar y quitar proveedores de identidad, habilitar y deshabilitar los mismos del widget, configurar el idioma, entre otras opciones que serán explicadas en profundidad más adelante en este informe.
+	</p>
+</div>
+<div class="row marketing" ng-show="selected==2">
+	<h3>¿Cómo surgió?</h3>
+	<p>
+		Implementar Social Login es una tarea difícil desde el principio, más aún si se planea que lo haga una sola persona. Las grandes redes sociales de todo el mundo ofrecen Social Login y no toma mucho tiempo darse cuenta de que es casi una misión imposible integrar más de dos redes sociales sin asignar una significante cantidad de recursos humanos para la implementación y el mantenimiento de la autenticación. 
+	</p>
+	<p>
+		Cuando comienza la investigación, los desarrolladores empiezan a darse cuenta que muy pocas de las API’s, de estos proveedores de identidad, siguen las mismas normas y que lo que podría haber funcionado ayer cambia con una actualización hoy. Por ejemplo, mientras que Twitter sigue con OAuth 1.0, Google cierra Buzz que se ejecutaba con un protocolo híbrido (OAuth 1.0 combinado con OpenID) para luego lanzar Google+ sobre OAuth 2.0. Esta versión no es la misma que la de OAuth 2.0 que Facebook está utilizando. Y ahí empieza la pesadilla para los desarrolladores.
+	</p>
+	<p>
+		Una de las principales ventajas de la integración de Social Login es la riqueza de datos puestos a disposición por los proveedores de identidad. Sin embargo, no hay una estandarización en el campo de la estructura y la nomenclatura para facilitar la programación. Cada vez que se quiera añadir un nuevo tipo de datos que ofrece uno o más proveedores de identidad, será necesaria la programación.
+	</p>
+	<p>
+		Luego de la implementación llega la etapa del mantenimiento, el cual no es un tema menor. En los últimos años, Facebook ha lanzado importantes cambios en su API, Google también, Twitter está detrás de la tecnología por lo que un cambio es inminente, sin olvidarse de Microsoft y otros, que también han hecho cambios y han liberado mejoras importantes en sus API’s. Estos grandes cambios requieren que los desarrolladores realicen investigaciones para actualizar su código. Los cambios no son siempre esperados y esto puede paralizar la autenticación de los usuarios hasta que se actualicen los proyectos correspondientes para arreglarlo.
+	</p>
+	<p>
+		Por otro lado, no hay que olvidar la importancia de los datos de los usuarios. Social Login devuelve a los sitios web grandes cantidades de datos y su uso puede ser un reto cuando se trata de ofrecer acceso mediante múltiples proveedores de identidad, ya que cada uno devuelve diferentes cantidades de datos, en diferentes formatos y con diferentes estructuras.
+	</p>
+	<p>
+		En términos de análisis, Facebook es el único proveedor de identidad que ofrece cifras interesantes en cuanto al uso de su API. Se puede ver el número de inicios de sesión, las acciones, el alcance, los grupos de edades y el desglose por sexo, de los usuarios y algunos otros detalles. Facebook podría ser el único proveedor que ofrece análisis, pero el inconveniente es que es una perspectiva muy macro, no brinda estadísticas sobre el comportamiento de los usuarios individuales, sólo ofrece tendencias.
+	</p>
+	<p>
+		Con el tiempo, el desafío será el seguimiento de los análisis de todos los proveedores de identidad mediante los que se ofrece autenticación ya que los datos no estarán disponibles en un lugar central, sino en cada proveedor de identidad.
+	</p>
+	<p>
+		Para no tener que lidiar con las cuestiones planteadas anteriormente existen soluciones pagas para implementar Social Login en un sitio web, como por ejemplo <a ng-href="http://www.gigya.com/social-login/" target="_blank">Gigya</a> y <a ng-href="http://janrain.com/product/social-login/" target="_blank">Janrain</a>. Estos proveedores, ofrecen sencillez, personalización, y análisis de datos, entre otras cosas. Estas características pueden potencialmente ser muy beneficiosas para los sitios web de comercio electrónico, ya que brindan estadísticas y análisis de los datos de los usuarios.
+	</p>
+	<p>
+		Contratar un proveedor de Social Login pago puede ser una buena decisión, ya que, básicamente resolvería toda la complejidad que conlleva implementar un Social Login propio. Incluso se podría  contar con soporte post implementación, dependiendo del tipo de servicio contratado. Pero, como todo, la utilización de servicios externos tiene sus contras. Principalmente, incluir a un tercero, el proveedor, tiene el inconveniente de que se estaría compartiendo cierta información con éste, más que nada, se estarían dejando los datos de los usuarios en manos del proveedor de Social Login. Es una realidad que no todos los desarrolladores se sienten cómodos teniendo un intermediario entre el usuario y su sitio web, más aun sabiendo que este intermediario procesará y analizará la información que pase por sus manos. El hecho de elegir utilizar un proveedor de Social Login depende exclusivamente de la confianza que el desarrollador tenga en él.
+	</p>
+	<p>
+		Por otro lado, existen soluciones que son gratuitas, de código abierto y en las cuales el manejo de la información queda bajo el control total del desarrollador web, pero tienen la desventaja de ser muy difíciles de integrar, y de poseer escasa documentación. Incluso muchas de ellas están a medio desarrollar o manejan muy pocos proveedores de identidad y no son extensibles.
+	</p>
+	<p>
+		Por ejemplo <a ng-href="https://developers.google.com/identity-toolkit/" target="_blank">GITkit (Google Identity Toolkit)</a> es una buena opción gratuita, pero que aún se encuentra en desarrollo. También podemos contar con <a ng-href="http://hybridauth.sourceforge.net/" target="_blank">HybridAuth</a> uno de los plugins de Social Login de código abierto más completos, que ofrece autenticación por medio de una gran cantidad de proveedores de identidad, pero su configuración no es tan simple como dice ser, es necesario codificar unas cuantas líneas para lograr un alternativa de autenticación íntegramente funcional, y ni hablar si se pretende realizar alguna extensión. Aun así cabe destacar que cuenta con una buena documentación y con continuidad en su desarrollo y evolución, lo cual es muy positivo. 
+	</p>
+	<p>
+		A pesar de todas las opciones que existen para que un desarrollador pueda implementar Social Login en sus sitios web, ninguna de ellas logra satisfacer la necesidad más importante que tiene hoy en día el desarrollador promedio, que la mayoría de los casos es: facilidad y rapidez de integración y de adaptación. Con esta premisa se comienza a pensar en ESLIP, un plugin sencillo, que sea fácil de integrar, que sea él quien guía al usuario en la configuración, que genere código para que el desarrollador lo utilice. Más aún, que se pueda adaptar fácilmente a los nuevos proveedores de identidad que surgen día a día en la vorágine que es internet.
+	</p>
+</div>
+<div class="row marketing" ng-show="selected==3">
+	<h3>¿Por qué utilizarlo?</h3>
+	<p>
+		A nuestro parecer, existe una vasta cantidad de buenas razones para que un desarrollador elija implementar su solución de Social Login mediante ESLIP, pero la principal razón se basa explícitamente en el motivo por el cual se decidió llevar adelante el desarrollo de este plugin, y es la simpleza, de la mano de la facilidad de integración. Partiendo de esta característica, se ramifican los demás beneficios que contrae utilizar ESLIP. 
+	</p>
+	<p>
+		Asimismo, se debe destacar que el plugin apunta a desarrolladores web en general. Dicho de otro modo, para poder integrar ESLIP a un sitio web, no es necesario contar con desarrolladores expertos, basta con conocimientos mínimos de programación web y con seguir las instrucciones que brinda el plugin. De esta manera, siguiendo los pasos que propone ESLIP con atención, en un lapso breve se podrá contar con un widget de Social Login funcional para realizar autenticación de usuarios en un sitio web.
+	</p>
+	<p>
+		Para poder guiar al desarrollador, ESLIP cuenta con un wizard de configuración, es decir cuenta con una interfaz de usuario que presenta una secuencia de cuadros de diálogo que conducen al usuario a través de una serie de pasos bien definidos. De esta manera, la tarea de configuración, que en la mayoría de los plugins es compleja, resulta ser más fácil de realizar mediante este asistente.
+	</p>
+	<p>
+		Adicionalmente el plugin cuenta con un módulo de administración, el cual provee una interfaz de usuario para modificar la configuración forma muy sencilla, permitiendo agregar proveedores de identidad, actualizar los datos de los mismos, activar y desactivar los distintos proveedores, entre otras cosas. Cabe destacar que este módulo de administración brinda la posibilidad de agregar nuevos proveedores de identidad, extendiendo así la funcionalidad del widget de Social Login, para ofrecer a los usuarios nuevas opciones de autenticación. El único requisito necesario para poder agregar un proveedor de identidad nuevo es que debe soportar el protocolo OAuth o el protocolo OpenID en cualquiera de sus versiones.
+	</p>
+	<p>
+		Más aún, para facilitar las cosas, ESLIP cuenta con una lista de proveedores de identidad precargados, listos para ser configurados y activados de forma muy simple, (sólo deben configurarse dos o tres datos dependiendo del proveedor en cuestión). A su vez, esta lista se irá actualizando en razón de la popularidad que vayan adquiriendo los distintos proveedores de identidad que abundan en la web, de manera tal, que el plugin siga creciendo para dar soporte a la mayor cantidad de proveedores posible.
+	</p>
+	<p>
+		Uno de los factores más importantes a destacar es que con ESLIP, el desarrollador posee control total sobre los datos de los usuarios, es decir, el plugin se encarga de realizar la autenticación del usuario frente al proveedor de identidad seleccionado y luego retorna un objeto con los datos de ese usuario, que fueron solicitados mediante la configuración de dicho proveedor. De esta manera ESLIP no se interpone entre el sitio web y los datos del usuario, sólo verifica que el usuario sea quien dice ser y pone, en manos del sitio web, los datos del usuario que retornó el proveedor de identidad.
+	</p>
+	<p>
+		Por último, es importante mencionar que esta herramienta está disponible tanto en español como en inglés. Basta con configurar el idioma deseado en el módulo de administración. Pero si se necesita en otro idioma, resulta muy simple extenderlo para tal requerimiento. Por otra parte, se espera que, en un futuro, los desarrolladores que utilicen ESLIP colaboren con el proyecto y, entre otras cosas, compartan las distintas traducciones para así expandir el uso del plugin más allá de las fronteras.
+	</p>
+</div>
+<div class="row marketing" ng-show="selected==4">
+	<h3>Licencia MIT</h3>
+	<p>
+		Como se dijo desde un principio, ESLIP es un proyecto de código abierto (Open Source). Se tomó la decisión de que sea de código abierto para que los desarrolladores o los dueños de los sitios en los que están interesados en integrar Social Login puedan estudiar, modificar y mejorar el código.
+	</p>
+	<p>
+		Los usuarios pueden adaptarlo a sus necesidades y corregir errores dando como resultado una mejora del plugin.
+	</p>
+	<p>
+		Luego de analizar diferentes licencias de código abierto, se optó por elegir la <a ng-href="http://www.opensource.org/licenses/mit-license.php" target="_blank">licencia MIT</a> para el plugin ESLIP. Esta licencia pone como condición que la nota de copyright y la parte de los derechos se incluya en todas las copias o partes sustanciales que se utilicen del software (en este caso el plugin). 
+	</p>
+	<p>
+		Los derechos que otorga la licencia MIT son muchos: sin restricciones; incluyendo usar, copiar, modificar, integrar con otro software, publicar, sublicenciar y/o vender copias del software, y además permitir a las personas a las que se les entregue el software hacer lo mismo.
+	</p>
+</div>
+<div class="row marketing" ng-show="selected==5">
+	<h3>Contribuir con el proyecto</h3>
+	<p>
+		ESLIP es un proyecto de código abierto, como ya se ha mencionado anteriormente, por ese motivo es que se pone a disposición de la comunidad, tanto su código, como su documentación. Invitando a colaborar con el desarrollo, a quien desee hacerlo, buscando permanente el crecimiento y la evolución del plugin. Asimismo, contribuir con código no es la única manera de ayudar, también es posible traducir ESLIP a un idioma determinado o simplemente compartir los links de la página del plugin, para que más gente pueda conocerlo.
+	</p>
+	<p>
+		Para contribuir con el desarrollo del plugin se recomienda seguir el siguiente proceso:
+		<ol>
+			<li>Instalar <a ng-href="http://git-scm.com/downloads" target="_blank">Git</a>.</li>
+			<li>Registrarse en <a ng-href="https://github.com/join" target="_blank">GitHub</a>.</li>
+			<li>Crear un fork del repositorio de ESLIP (https://github.com/eslip/eslip). Clonar el fork en la máquina donde se va a desarrollar. Configurar los remotos. Crear un nuevo branch (del branch principal de desarrollo del proyecto) para contener su mejora, cambio o arreglo. (Detalles <a ng-href="https://help.github.com/articles/fork-a-repo" target="_blank">aquí</a>).</li>
+			<li>Agregar, quitar o modificar lo que se crea necesario para la mejora del plugin.</li>
+			<li>Una vez realizadas las modificaciones, realizar un push de los cambios locales al fork en GitHub. Luego crear una solicitud de pull desde el branch creado al branch principal (master) (Detalles <a ng-href="https://help.github.com/articles/using-pull-requests" target="_blank">aquí</a>). En la solicitud de pull, describir lo que hacen los cambios y mencionar el número de issue que se encuentra involucrado. Por ejemplo, "Cierra # 123".</li>
+			<li>Probablemente se origine una discusión sobre la solicitud de pull y, de ser necesario se realizará algún cambio, si todo resulta bien, se realizará el merge al branch principal del proyecto.</li>
+		</ol>
+	</p>
+	<p>
+		Recordar que quien realice la contribución estará de acuerdo en permitir a los propietarios del proyecto licenciar su trabajo bajo los términos de la licencia MIT.
+	</p>
 </div>
