@@ -2,11 +2,17 @@ var pluginURL = getPluginURL();
 
 function getPluginURL(){
     var scripts = document.getElementsByTagName('script');
-    var index = scripts.length - 1;
-    var myScript = scripts[index].src;
-    var auxPluginURL = myScript.substr(0, myScript.lastIndexOf( '/' ));
-    auxPluginURL = auxPluginURL.substr(0, auxPluginURL.lastIndexOf( '/' )+1);
-    return auxPluginURL; 
+    var path = '';
+    if(scripts && scripts.length>0) {
+        for(var i in scripts) {
+            if(scripts[i].src && scripts[i].src.match(/\/eslip_plugin\.js$/)) {
+                path = scripts[i].src.replace(/(.*)\/\eslip_plugin.js$/, '$1');
+                break;
+            }
+        }
+    }
+    path = path.substr(0, path.lastIndexOf( '/' )+1);
+    return path;
 }
 
 function isAutoInit(){
@@ -21,7 +27,9 @@ function isAutoInit(){
 window.onload = function(){
     var autoInit = isAutoInit();
     if (autoInit && autoInit === 'true'){
-        createWidget();
+        if (typeof document.getElementById("ESLIP_Plugin") !== 'undefined'){
+            createWidget();    
+        }
     }
 }
 
