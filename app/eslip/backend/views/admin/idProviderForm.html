@@ -1,0 +1,202 @@
+<form id="form" role="form">
+    
+    <input type="hidden" id="method" name="method" data-value="method"/>
+
+    <div class="form-group">
+        <label for="id"><span data-content="labels.id"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpId"},{"attribute": "data-title", "value": "labels.id"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                <input type="text" class="form-control" id="id" name="id" data-value="idProvider.id" disabled="disabled">
+                <div id="selectContainer" class="selectContainer">
+                    <select class="form-control" id="id" name="id" data-value="idProvider.id" data-template-bind='{"attribute": "options", "value": {"data": "idProvidersButtons", "value":"value", "content":"content"}}'>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-2 remove-padding-left">
+                <div class="buttonTools">
+                    <span id="add" data-template-bind='[{"attribute": "title", "value": "labels.btnNew"}]' class="glyphicon glyphicon-plus"></span>
+                    <span id="edit" data-template-bind='[{"attribute": "title", "value": "labels.btnEdit"}]' class="glyphicon glyphicon-pencil"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="name" ><span data-content="labels.name"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" name="name" data-value="idProvider.name" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpName"},{"attribute": "data-title", "value": "labels.name"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="label"><span data-content="labels.label"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="label" name="label" data-value="idProvider.label" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpLabel"},{"attribute": "data-title", "value": "labels.label"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" id="buttonStylePreview">
+        <label for="buttonStyle" <span data-content="labels.buttonPreview"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="buttonStyle"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="active" ><span data-content="labels.active"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <select class="form-control" id="active" name="active" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpActive"},{"attribute": "data-title", "value": "labels.active"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                    <option value="0" data-content="labels.no"></option>
+                    <option value="1" data-content="labels.yes"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <label for="oauth" ><span data-content="labels.oauth"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <select class="form-control" id="oauth" name="oauth" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpOauth"},{"attribute": "data-title", "value": "labels.oauth"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                    <option value="1.0">1.0</option>
+                    <option value="1.0a">1.0a</option>
+                    <option value="2.0">2.0</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="requestTokenUrl" <span data-content="labels.requestTokenUrl"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="requestTokenUrl" name="requestTokenUrl" data-value="idProvider.requestTokenUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpRequestTokenUrl"},{"attribute": "data-title", "value": "labels.requestTokenUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="dialogUrl" ><span data-content="labels.dialogUrl"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="dialogUrl" name="dialogUrl" data-value="idProvider.dialogUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpDialogUrl"},{"attribute": "data-title", "value": "labels.dialogUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="accessTokenUrl" ><span data-content="labels.accessTokenUrl"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="accessTokenUrl" name="accessTokenUrl" data-value="idProvider.accessTokenUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpAccessTokenUrl"},{"attribute": "data-title", "value": "labels.accessTokenUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="apiCallParameters"><span data-content="labels.apiCallParameters"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="apiCallParameters" name="apiCallParameters" data-value="idProvider.apiCallParameters" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpApiCallParameters"},{"attribute": "data-title", "value": "labels.apiCallParameters"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="authorizationHeader" ><span data-content="labels.authorizationHeader"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <select class="form-control" id="authorizationHeader" name="authorizationHeader" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpAuthorizationHeader"},{"attribute": "data-title", "value": "labels.authorizationHeader"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                    <option value="0" data-content="labels.no"></option>
+                    <option value="1" data-content="labels.yes"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="urlParameters" ><span data-content="labels.urlParameters"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <select class="form-control" id="urlParameters" name="urlParameters" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpUrlParameters"},{"attribute": "data-title", "value": "labels.urlParameters"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                    <option value="0" data-content="labels.no"></option>
+                    <option value="1" data-content="labels.yes"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <label for="clientId" ><span data-content="labels.clientId"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="clientId" name="clientId" data-value="idProvider.clientId" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpClientId"},{"attribute": "data-title", "value": "labels.clientId"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="clientSecret" ><span data-content="labels.clientSecret"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="clientSecret" name="clientSecret" data-value="idProvider.clientSecret" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpClientSecret"},{"attribute": "data-title", "value": "labels.clientSecret"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="scope" ><span data-content="labels.scope"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="scope" name="scope" data-value="idProvider.scope" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpScope"},{"attribute": "data-title", "value": "labels.scope"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="hasAccessTokenExtraParameter"><span data-content="labels.hasAccessTokenExtraParameter"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <select class="form-control" id="hasAccessTokenExtraParameter" name="hasAccessTokenExtraParameter" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpHasAccessTokenExtraParameter"},{"attribute": "data-title", "value": "labels.hasAccessTokenExtraParameter"} ]' data-toggle="popover" data-container="body" data-placement="right">
+                    <option value="0" data-content="labels.no"></option>
+                    <option value="1" data-content="labels.yes"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="accessTokenExtraParameterName"><span data-content="labels.accessTokenExtraParameterName"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="accessTokenExtraParameterName" name="accessTokenExtraParameterName" data-value="idProvider.accessTokenExtraParameterName" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpAccessTokenExtraParameterName"},{"attribute": "data-title", "value": "labels.accessTokenExtraParameterName"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="userDataUrl"><span data-content="labels.userDataUrl"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="userDataUrl" name="userDataUrl" data-value="idProvider.userDataUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpUserDataUrl"},{"attribute": "data-title", "value": "labels.userDataUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="userDataIdKey"><span data-content="labels.userDataIdKey"></span>:</label>
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="userDataIdKey" name="userDataIdKey" data-value="idProvider.userDataIdKey" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpUserDataIdKey"},{"attribute": "data-title", "value": "labels.userDataIdKey"} ]' data-toggle="popover" data-container="body" data-placement="right">
+            </div>
+        </div>
+    </div>
+    
+</form>

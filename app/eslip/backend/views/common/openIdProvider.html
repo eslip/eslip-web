@@ -1,0 +1,36 @@
+<div class="idProvider" data-template-bind='[{"attribute": "id", "value": "id"}]'>
+
+	<div class="form-group">
+		<label for="idProviderName" class="col-sm-4 control-label"><span data-content="name"></span>:</label>
+        <div class="col-sm-8">
+        	<div id="switch" class="field switch" data-template-bind='[{"attribute": "active", "value": "active"},{"attribute": "provider", "value": "id"}]'>
+				<label class="cb-enable"><span>On</span></label>
+				<label class="cb-disable"><span>Off</span></label>
+				<input type="hidden" id="active" name="openIdActive" data-value="active" />	
+			</div>
+        </div>
+    </div>
+
+	<div class="idProviderData" data-template-bind='[{"attribute": "active", "value": "active"}]'>
+		
+		<input type="hidden" id="openIdProviderId" name="openIdProviderId" data-value="id" />
+
+		<div class="form-group">
+	        <label for="scopeRequired" class="col-sm-4 control-label"><span data-content="labels.scopeRequired"></span>:</label>
+	        <div class="col-sm-8">
+	            <input type="text" class="form-control" id="scopeRequired" name="scopeRequired" data-value="scopeRequired" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpScopeRequired"},{"attribute": "data-title", "value": "labels.scopeRequired"} ]' data-toggle="popover" data-container="body" data-placement="right">
+	        </div>
+	    </div>
+
+	    <div class="form-group">
+	        <label for="scopeOptional" class="col-sm-4 control-label"><span data-content="labels.scopeOptional"></span>:</label>
+	        <div class="col-sm-8">
+	            <input type="text" class="form-control" id="scopeOptional" name="scopeOptional" data-value="scopeOptional" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpScopeOptional"},{"attribute": "data-title", "value": "labels.scopeOptional"} ]' data-html="true" data-delay="400" data-toggle="popover" data-container="body" data-placement="right">
+	        </div>
+	    </div>
+
+	</div>
+
+	<hr/>
+
+</div>

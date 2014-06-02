@@ -1,0 +1,287 @@
+/******************************************************
+General
+*******************************************************/
+
+.borderBox{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+.checkbox {
+    height: 34px;
+}
+
+.form-group .control-label{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#idProvidersContainer{
+    width: 487px;
+}
+
+.static-width-form{
+    width: 520px;
+}
+
+.cut-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.stepTitle{
+    margin-bottom: 30px !important;
+    border-bottom: 2px solid #428bca;
+    padding-bottom: 10px;
+}
+
+/* Login Widget Code */
+
+.codeContainer{
+    background: #ffffff;
+    overflow:auto;
+    width:auto;
+    border:solid gray;
+    border-width:.1em .1em .1em .8em;
+    padding:.2em .6em;
+    line-height: 16px;
+}
+
+.codeContainer .tag{
+    color: #007700;
+}
+
+.codeContainer .attribute{
+    color: #0000CC;
+}
+
+.codeContainer .text{
+    background-color: #fff0f0;
+}
+
+.codeContainer .tab1{
+    margin-left: 20px;
+}
+
+.codeContainer .tab2{
+    margin-left: 40px;
+}
+
+/* ID Providers Button Tools */
+
+.buttonTools {
+	width: 100%;
+	height: 34px;
+}
+
+.buttonTools span{
+	float: left;
+	margin-top: 8px;
+	margin-right: 14px;
+	cursor: pointer;
+}
+
+/* Color Preview */
+
+.colorPreview {
+	float: left;
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+	border: solid 1px #ccc;
+}
+
+/* Button Preview in Data Tables */
+
+.rowButtonPreview .button{
+	zoom: 75%;
+	-moz-transform: scale(0.75);
+}
+
+/* Number Spinner */
+
+.input-group .input-group-addon.glyphicon{
+    top: 0;
+}
+
+.spinner .input-group-addon{
+    cursor: pointer;
+}
+
+#widgetRows[readonly], #widgetColumns[readonly] {
+    cursor: auto;
+    background-color: #fff;
+}
+
+/*** Admin color picker ***/
+
+.minicolors-theme-eslip .minicolors-input{
+	padding-left: 26px;
+}
+
+.minicolors-theme-eslip .minicolors-swatch {
+	top: 9px;
+	left: 5px;
+	width: 16px;
+	height: 16px;	
+}
+/*.minicolors-theme-eslip.minicolors-position-right .minicolors-swatch {
+	left: auto;
+	right: 5px;
+}
+
+.minicolors-theme-eslip.minicolors-position-bottom .minicolors-panel {
+	top: 22px;
+}*/
+
+/*** Wizard ***/
+
+/*.wizard-card {
+	overflow: auto;
+}*/
+
+/******************************************************
+Login
+*******************************************************/
+
+html.loginPage, body.loginPage {
+    background: #EFEFEF;
+}
+
+.loginContainer{
+    margin: 95px auto;
+    width: 350px;
+    border: 1px solid #ccc;
+    padding: 40px 60px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 3px 8px #cccccc;
+    -moz-box-shadow: 1px 3px 8px #cccccc;
+    box-shadow: 1px 3px 8px #cccccc;
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+ }
+
+.loginContainer .dtalk-logo{
+    width: 210px;
+    height: 52px;
+    margin: 0 auto;
+}
+
+.loginContainer .subtitle{
+    margin: 15px 0;
+    font-size: 16px;
+    float: left;
+}
+
+.loginContainer .btn{
+    display: block;
+    margin: 15px auto 0 auto;
+}
+
+.loginContainer .alert{
+    margin: 0;
+    text-align: center;
+}
+
+
+/******************************************************
+Admin
+*******************************************************/
+
+/* dataTable */
+
+.dataTable td.actions{
+    opacity: 0.2;
+}
+
+.dataTable tbody tr:hover td.actions{
+    opacity: 1;
+}
+
+.dataTable tbody tr:hover td{
+    background-color: #E0E0E0;
+}
+
+/* modal wide */
+/*
+.modal-wide .modal-dialog {
+  width: 60%;
+}
+
+@media (min-width: 768px)
+.modal-dialog {
+    width: 750px;
+}
+*/
+/* Popover */
+
+.modal .popover.right{
+    margin-right: 10px;
+}
+
+.popover{
+    z-index: 9999;
+}
+
+.remove-padding-left{
+    padding-left: 0px !important;
+}
+
+/* Login Buttons */
+
+#ESLIP_Plugin .eslip_button .eslip_button_image {
+    margin-right: 0.5rem;
+}
+
+/* Side notes */
+ 
+.bs-callout{
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+
+.bs-callout h4{
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+.bs-callout p:last-child{
+    margin-bottom:0;
+}
+
+.bs-callout code{
+    background-color:#fff;
+    border-radius:3px;
+}
+
+.bs-callout-danger{
+    background-color:#fdf7f7;
+    border-color:#d9534f;
+}
+
+.bs-callout-danger h4{
+    color:#d9534f;
+}
+
+.bs-callout-warning{
+    background-color:#fcf8f2;
+    border-color:#f0ad4e;
+}
+
+.bs-callout-warning h4{
+    color:#f0ad4e
+}
+
+.bs-callout-info{
+    background-color:#f4f8fa;
+    border-color:#5bc0de
+}
+
+.bs-callout-info h4{
+    color:#5bc0de
+}

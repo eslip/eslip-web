@@ -1,0 +1,36 @@
+<form id="form-id" class="form-horizontal" role="form" action="" method="POST" enctype="multipart/form-data" target="hiddenUpload">
+    
+    <input type="hidden" id="method" name="method" data-value="method"/>
+
+    <div class="form-group">
+        <label for="id" class="col-sm-3 control-label"><span data-content="labels.id"></span>:</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="id" name="id" data-value="button.id" class="disabled" disabled="disabled" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpButtonID"},{"attribute": "data-title", "value": "labels.id"} ]' data-toggle="popover" data-container="#form-id" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="logo" class="col-sm-3 control-label"><span data-content="labels.logo"></span>:</label>
+        <div class="col-sm-5">
+            <input type="file" class="form-control" id="logo" name="logo" data-value="button.logo" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpButtonLogo"},{"attribute": "data-title", "value": "labels.logo"} ]' data-toggle="popover" data-container="#form-id" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="textColor" class="col-sm-3 control-label"><span data-content="labels.textColor"></span>:</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control colorPicker" id="textColor" name="textColor" data-value="button.textColor" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpButtonTextColor"},{"attribute": "data-title", "value": "labels.textColor"} ]' data-toggle="popover" data-container="#form-id" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="backgroundColor" class="col-sm-3 control-label"><span data-content="labels.backgroundColor"></span>:</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control colorPicker" id="backgroundColor" name="backgroundColor" data-value="button.backgroundColor" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpButtonBackgroundColor"},{"attribute": "data-title", "value": "labels.backgroundColor"} ]' data-toggle="popover" data-container="#form-id" data-placement="right">
+        </div>
+    </div>
+
+    <iframe id="hiddenUpload" name="hiddenUpload" class="hiddenFrame hidden" src="">
+    </iframe>
+
+</form>

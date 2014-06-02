@@ -1,0 +1,1 @@
+<?php Header('Location: ../backend/admin.php'); ?>

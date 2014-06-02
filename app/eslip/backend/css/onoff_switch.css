@@ -1,0 +1,11 @@
+#switch.switch {float: left;}
+#switch .cb-enable, #switch .cb-disable, #switch .cb-enable span, #switch .cb-disable span { background: url(../images/switch.gif) repeat-x; display: block; float: left; width:auto;}
+#switch .cb-enable span, #switch .cb-disable span { line-height: 30px; display: block; background-repeat: no-repeat; font-weight: bold; }
+#switch .cb-enable span { background-position: left -90px; padding: 0 10px; }
+#switch .cb-disable span { background-position: right -180px;padding: 0 10px; }
+#switch .cb-disable.selected { background-position: 0 -30px; }
+#switch .cb-disable.selected span { background-position: right -210px; color: #fff; }
+#switch .cb-enable.selected { background-position: 0 -60px; }
+#switch .cb-enable.selected span { background-position: left -150px; color: #fff; }
+#switch.switch label { cursor: pointer; }
+#switch.switch input { display: none; }

@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="stepTitle" data-content="labels.generalConfigs"></h3>
+    </div>
+</div>
+
+<div class="successMessage alert alert-success alert-dismissable fade in" style="display:none;">
+    <button type="button" class="close" onclick="$(this).parent('.alert').hide();">&times;</button>
+    <span class="glyphicon glyphicon-ok"></span> <span data-content="labels.messageSuccess"></span>
+</div>
+
+<div class="errorMessage alert alert-danger alert-dismissable fade in" style="display:none;">
+    <button type="button" class="close" onclick="$(this).parent('.alert').hide();">&times;</button>
+    <span class="glyphicon glyphicon-remove"></span> <span data-content="labels.messageError"></span>
+</div>
+
+<form id="form" class="form-horizontal static-width-form" role="form">
+    
+    <div class="form-group">
+        <label for="siteUrl" class="col-sm-4 control-label"><span data-content="labels.siteUrl"></span>:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="siteUrl" name="siteUrl" data-value="settings.siteUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpSiteUrl"},{"attribute": "data-title", "value": "labels.siteUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="callbackUrl" class="col-sm-4 control-label"><span data-content="labels.callbackUrl"></span>:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="callbackUrl" name="callbackUrl" data-value="settings.callbackUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpCallbackUrl"},{"attribute": "data-title", "value": "labels.callbackUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="pluginUrl" class="col-sm-4 control-label"><span data-content="labels.pluginUrl"></span>:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="pluginUrl" name="pluginUrl" data-value="settings.pluginUrl" data-template-bind='[{"attribute": "data-content", "value": "labels.HelpPluginUrl"},{"attribute": "data-title", "value": "labels.pluginUrl"} ]' data-toggle="popover" data-container="body" data-placement="right">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="language" class="col-sm-4 control-label"><span data-content="labels.selectLangTitle"></span>:</label>
+        <div class="col-sm-8">
+           <select class="form-control" id="language" name="language" data-value="settings.selectedLang" data-template-bind='[{"attribute": "options", "value": {"data": "languageOptions", "value":"value", "content":"content"}},{"attribute": "data-content", "value": "labels.HelpLanguage"},{"attribute": "data-title", "value": "labels.selectLangTitle"}]' data-container="body" data-toggle="popover" data-placement="right">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label"></label>
+        <div class="col-sm-8">
+           <button type="button" id="save" class="btn btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> <span data-content="labels.btnSave"></span></button>
+           <button type="button" id="cancel" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> <span data-content="labels.btnCancel"></span></button>
+        </div>
+    </div>
+
+</form>

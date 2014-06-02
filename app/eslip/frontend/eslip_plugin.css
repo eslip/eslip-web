@@ -1,0 +1,96 @@
+/* Main styles */
+
+#ESLIP_Plugin {
+    overflow: hidden;
+}
+
+#ESLIP_Plugin * {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+#ESLIP_Plugin .eslip_button {
+    padding: 0.5rem;  
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    float: left;
+}
+
+#ESLIP_Plugin .buttonView .eslip_button{
+    margin-right: 1%;
+    margin-bottom: 0.5rem;
+}
+
+#ESLIP_Plugin .buttonView .eslip_button:hover {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+#ESLIP_Plugin .iconView, 
+#ESLIP_Plugin .iconView ul, 
+#ESLIP_Plugin .iconView li {
+    float: left;
+    width: 100%;
+}
+
+#ESLIP_Plugin .iconView .eslip_button .eslip_button_image:hover {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+#ESLIP_Plugin .eslip_button .eslip_button_image {
+    height: 2rem;
+    width: 2rem;
+    float: left;
+}
+
+#ESLIP_Plugin .buttonView .eslip_button .eslip_button_image {
+    margin-right: 0.5rem;
+}
+
+#ESLIP_Plugin .eslip_button > .eslip_button_image,
+#ESLIP_Plugin .eslip_button > .eslip_button_label {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2rem;
+    height: 2rem;
+}
+
+/* Slider widget */
+
+#ESLIP_Plugin > div {
+    float: left;
+}
+
+#ESLIP_Plugin #eslip_slideleft, #ESLIP_Plugin #eslip_slideright {
+    cursor:pointer
+}
+
+#eslip_wraper {
+    position: relative;
+}
+
+#eslip_wraper ul.slider {
+    position: absolute;
+}
+
+#ESLIP_Plugin li {
+  float: left;
+  list-style: none;
+}
+
+#ESLIP_Plugin .eslip_prevArrow{
+  background: url(img/icon-arrow-left-b-32.png) no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+#ESLIP_Plugin .eslip_nextArrow{
+  background: url(img/icon-arrow-right-b-32.png) no-repeat;
+  width: 32px;
+  height: 32px;
+}
