@@ -2,7 +2,7 @@
 
 app.controller('DemoCtrl', function (DemoService, $scope){
 
-    $scope.user = {};
+    $scope.user;
 
     var userPromise = DemoService.getUser();
 
