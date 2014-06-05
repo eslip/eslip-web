@@ -57,6 +57,7 @@ class Eslip {
     * que se utilizan en el plugin.
     *
     * @access public
+    * @param object $xmlApi Instancia de la clase xmlApi
     */
 
 	public function __construct($xmlApi)
@@ -437,8 +438,8 @@ class EslipXMLApi {
     * Asgina valores a una lista de atributo determinada de un elemento del XML
     *
     * @access public
-	* @param Array $attribute lista de los atributos del elemento del XML a los cuales se desea asginar valores
-    * @param Array $value lsita con los valores que serán asignados a los atributos
+	* @param Array $attributes lista de los atributos del elemento del XML a los cuales se desea asginar valores
+    * @param Array $values lsita con los valores que serán asignados a los atributos
 	* @param String $element cadena que representa al elemento del XML el cual contiene los atributos a atualizar
 	* @param String $elementId id del elemento del XML que contiene los atributos a atualizar
     */

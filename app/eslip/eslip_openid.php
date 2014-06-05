@@ -193,9 +193,8 @@ class eslip_openid extends Eslip_protocol
     * Metodo constructor de la clase. Se inicializan las variables de configuración del plugin
     *
     * @access public
-    * @param string $eslip_data Cadena codificada en base64 con datos internos del plugin que se deben mantener entre llamadas
-    * @param array $identity_provider Arreglo con los datos de configuración del plugin
-    * @param string $site_url URL del sitio que esta implementando el plugin
+    * @param object $eslip Instancia de la clase Eslip
+    * @param string $referer URL de la cual proviene el llamado al plugin para luego ser enviado de vuelta 
     * @throws EslipException Si el constructor no recibe el parametro $eslip_data
     * @throws EslipException Si el constructor no recibe el parametro $identity_provider
     * @throws EslipException Si el constructor no recibe el parametro $site_url

@@ -5,12 +5,11 @@ include_once('eslip_protocol.php');
 /**
 * ESLIP OAuth
 *
-* Esta clase implementa el protocolo OAuth para autenticar a un usuario 
-* intercambiando mensajes con las API's de los Proveedores de Identidad.
-* Esta clase soporta las versiones 1.0,  1.0a y 2.0 de OAuth. 
+* Esta clase implementa el protocolo OAuth para autenticar a un usuario intercambiando 
+* mensajes con las API's de los Proveedores de Identidad. Esta clase soporta las versiones 1.0,  1.0a y 2.0 de OAuth.
 *
-* @author Nicol·s Burghi [nicoburghi@gmail.com]
-* @author MartÌn Estigarribia [martinestiga@gmail.com]
+* @author Nicol√°s Burghi [nicoburghi@gmail.com]
+* @author Mart√≠n Estigarribia [martinestiga@gmail.com]
 * @license http://opensource.org/licenses/mit-license.php The MIT License (MIT)
 * @package Eslip
 */
@@ -38,9 +37,9 @@ class eslip_oauth extends Eslip_protocol
 	private $request_token_url = '';
 
     /**
-    * URL del formulario de login del proveedor de identidad. Se redirigir· al propietario del recurso 
-	* a dicha URL para que inicie sesiÛn en el proveedor de identidad correspondiente y autorice o no a 
-	* la aplicaciÛn cliente
+    * URL del formulario de login del proveedor de identidad. Se redirigir√° al propietario del recurso 
+	* a dicha URL para que inicie sesi√≥n en el proveedor de identidad correspondiente y autorice o no a 
+	* la aplicaci√≥n cliente
     *
     * @var string 
     * @access private
@@ -49,7 +48,7 @@ class eslip_oauth extends Eslip_protocol
 	private $dialog_url = '';
 
 	/**
-    * URL del proveedor de identidad que retornar· el access token
+    * URL del proveedor de identidad que retornar√° el access token
     *
     * @var string 
     * @access private
@@ -58,8 +57,8 @@ class eslip_oauth extends Eslip_protocol
 	private $access_token_url = '';
 
 	/**
-    * VersiÛn del protocolo que soporta el servidor OAuth del proveedor de identidad con la que 
-    * se est· interactuando
+    * Versi√≥n del protocolo que soporta el servidor OAuth del proveedor de identidad con la que 
+    * se est√° interactuando
     *
     * @var string 
     * @access private
@@ -68,7 +67,7 @@ class eslip_oauth extends Eslip_protocol
 	private $oauth_version = '2.0';
 
 	/**
-    * Determina si la API del proveedor de identidad con la que se est· interactuando requiere a
+    * Determina si la API del proveedor de identidad con la que se est√° interactuando requiere a
     * la hora de realizar la peticion del token inicial que se le envien los parametros en la URL. 
     * Esta variable solo se utiliza para servidores OAuth 1.0 ya que 2.O siempre los pasa por la URL
     *
@@ -79,9 +78,9 @@ class eslip_oauth extends Eslip_protocol
 	private $url_parameters = FALSE;
 
 	/**
-    * Determina si la API del proveedor de identidad con la que se est· interactuando requiere a
+    * Determina si la API del proveedor de identidad con la que se est√° interactuando requiere a
     * la hora de realizar la peticion del token inicial que se le envien los parametros en la cabecera
-    * de la peticiÛn HTTP
+    * de la petici√≥n HTTP
     *
     * @var boolean 
     * @access private
@@ -90,7 +89,7 @@ class eslip_oauth extends Eslip_protocol
 	private $authorization_header = TRUE;
 
 	/**
-    * URL a la que retornar· la API OAuth con la que estamos interactuando. Debe ser la URL del script 
+    * URL a la que retornar√° la API OAuth con la que estamos interactuando. Debe ser la URL del script 
     * que procesa la respuesta de la API
     *
     * @var string 
@@ -100,7 +99,7 @@ class eslip_oauth extends Eslip_protocol
 	private $redirect_uri = '';
 
 	/**
-    * Identificador provisto por la API OAuth de la aplicaciÛn creada
+    * Identificador provisto por la API OAuth de la aplicaci√≥n creada
     *
     * @var string 
     * @access private
@@ -109,7 +108,7 @@ class eslip_oauth extends Eslip_protocol
 	private $client_id = '';
 
 	/**
-    * Clave secreta provista por la API OAuth para la aplicaciÛn creada
+    * Clave secreta provista por la API OAuth para la aplicaci√≥n creada
     *
     * @var string 
     * @access private
@@ -128,7 +127,7 @@ class eslip_oauth extends Eslip_protocol
 	private $scope = '';
 
 	/**
-    * Access token obtenido de la API OAuth con la que se est· intercactuando
+    * Access token obtenido de la API OAuth con la que se est√° intercactuando
     *
     * @var string 
     * @access private
@@ -137,7 +136,7 @@ class eslip_oauth extends Eslip_protocol
 	private $access_token = '';
 
 	/**
-    * Access token secret obtenido de la API OAuth con la que se est· intercactuando
+    * Access token secret obtenido de la API OAuth con la que se est√° intercactuando
     *
     * @var string 
     * @access private
@@ -155,7 +154,7 @@ class eslip_oauth extends Eslip_protocol
 	private $access_token_expiry = '';
 
 	/**
-    * SeÒala si la API OAuth del proveedor de identidad con el que se est· interactuando devuelve un 
+    * Se√±ala si la API OAuth del proveedor de identidad con el que se est√° interactuando devuelve un 
     * parametro extra en la respuesta a la peticion de access token necesario para la autenticacion
     *
     * @var boolean 
@@ -165,8 +164,8 @@ class eslip_oauth extends Eslip_protocol
 	private $has_access_token_extra_parameter = FALSE;
 
 	/**
-    * Nombre de la llave dentro de la respuesta a la peticiÛn de access token para acceder al parametro extra
-    * en caso de que el proveedor de identidad con el que se est· interactuando devuelva uno
+    * Nombre de la llave dentro de la respuesta a la petici√≥n de access token para acceder al parametro extra
+    * en caso de que el proveedor de identidad con el que se est√° interactuando devuelva uno
     *
     * @var string 
     * @access private
@@ -184,8 +183,8 @@ class eslip_oauth extends Eslip_protocol
 	private $access_token_extra_parameter = '';
 
 	/**
-    * URL que proporciona la API OAuth del proveedor de identidad con el que se est· interactuando 
-    * a la cual se le realiza la peticiÛn para obtener los recursos requeridos
+    * URL que proporciona la API OAuth del proveedor de identidad con el que se est√° interactuando 
+    * a la cual se le realiza la petici√≥n para obtener los recursos requeridos
     *
     * @var string 
     * @access private
@@ -194,7 +193,7 @@ class eslip_oauth extends Eslip_protocol
 	private $user_data_url = '';
 
 	/**
-	* Nombre de la llave dentro de la respuesta a la peticiÛn de recursos para acceder al identificador unico
+	* Nombre de la llave dentro de la respuesta a la petici√≥n de recursos para acceder al identificador unico
     * del propietario de los recursos
     *
     * @var string 
@@ -214,7 +213,7 @@ class eslip_oauth extends Eslip_protocol
     private $api_call_parameters = '';
 
 	/**
-    * Metodo constructor de la clase. Se inicializan las variables de configuraciÛn del proveedor de
+    * Metodo constructor de la clase. Se inicializan las variables de configuraci√≥n del proveedor de
     * identidad con el que se va a interactuar
     *
     * @access public
@@ -268,7 +267,7 @@ class eslip_oauth extends Eslip_protocol
 
     /**
     * Devuelve el estado creado y almacenado en la sesion o crea uno y lo almacena en caso de que no exista todavia.
-    * El estado es una cadena aleatoria que ser· usada para prevenir ataques del tipo CSRF (Cross-Site Request Forgery)
+    * El estado es una cadena aleatoria que ser√° usada para prevenir ataques del tipo CSRF (Cross-Site Request Forgery)
     *
     * @access private
     * @return string Cadena de estado alamacenada en la sesion
@@ -284,7 +283,7 @@ class eslip_oauth extends Eslip_protocol
 
 	/**
     * Devuelve el parametro state incluido en la URL (redirect_uri) a la cual la API OAuth del proveedor de identidad 
-    * con el que se est· interactuando retorna luego de la autenticacion.
+    * con el que se est√° interactuando retorna luego de la autenticacion.
     *
     * @access private
     * @return string Parametro state devuelto en la URL
@@ -297,7 +296,7 @@ class eslip_oauth extends Eslip_protocol
 
 	/**
     * Devuelve el authorization code incluido en la URL (redirect_uri) a la cual la API OAuth del proveedor de identidad 
-    * con el que se est· interactuando retorna luego de la autenticacion. El authorization code luego se utiliza
+    * con el que se est√° interactuando retorna luego de la autenticacion. El authorization code luego se utiliza
     * para obtener un token de acceso
     *
     * @access private
@@ -311,7 +310,7 @@ class eslip_oauth extends Eslip_protocol
 
 	/**
     * Devuelve el error incluido en la URL (redirect_uri) a la cual la API OAuth del proveedor de identidad 
-    * con el que se est· interactuando retorna luego de la autenticacion en caso de que haya habido un error en
+    * con el que se est√° interactuando retorna luego de la autenticacion en caso de que haya habido un error en
     * dicha autenticacion
     *
     * @access private
@@ -325,7 +324,7 @@ class eslip_oauth extends Eslip_protocol
 
 	/**
     * Devuelve el parametro denied incluido en la respuesta (redirect_uri) a la cual la API OAuth del proveedor de identidad 
-    * con el que se est· interactuando retorna luego de la autenticacion en caso de que el propietario de los recursos
+    * con el que se est√° interactuando retorna luego de la autenticacion en caso de que el propietario de los recursos
     * no haya autorizado a su acceso a la aplicacion cliente
     *
     * @access private
@@ -339,7 +338,7 @@ class eslip_oauth extends Eslip_protocol
 
 	/**
     * Devuelve los parametros Request Token y Verifier incluidos en la URL (redirect_uri) a la cual la API OAuth 
-    * del proveedor de identidad con el que se est· interactuando retorna luego de su peticion
+    * del proveedor de identidad con el que se est√° interactuando retorna luego de su peticion
     *
     * @access private
     * @return array Parametros Request Token y Verifier devueltos en la URL
@@ -441,15 +440,15 @@ class eslip_oauth extends Eslip_protocol
     * Realiza una peticion a la API Oauth del proveedor de identidad con el que se esta interactuando.
     * La URL con la que se desea comunicar, y los parametros que se utilizan son recibidos por este metodo
     * por parametro.
-    * Dependiendo de la version del servidor OAuth, ser· el tratamiento que se le realizar·n a los
+    * Dependiendo de la version del servidor OAuth, ser√° el tratamiento que se le realizar√°n a los
     * parametros para luego ser enviados. 
     * La conexion con el servidor OAuth se realiza utlizando la libreria cURL.
     *
     * @access private
     * @param string $url URL de la API OAuth con la que nos vamos a comunicar
     * @param string $method Metodo HTTP que se va a utilizar para comunicarse con el servidor
-    * @param array $parameters Parametros que se van a enviar en la peticiÛn
-    * @param array $oauth Parametros especificos de OAuth 1.0 que se van a enviar en la peticiÛn
+    * @param array $parameters Parametros que se van a enviar en la petici√≥n
+    * @param array $oauth Parametros especificos de OAuth 1.0 que se van a enviar en la petici√≥n
     * @param array $options Informacion adicional para la interfaz o manejo de errores
     * @return array Arreglo con los datos devueltos por el servidor OAuth
     */
@@ -590,7 +589,7 @@ class eslip_oauth extends Eslip_protocol
     * esta interactuando. Para poder realizar este pedido previamente se debe haber obtenido el token de accesp
     * correspondiente
     * La URL a la que se debe comunicar, y los parametros que se utilizan fueron previamente obtenidos y configurados
-    * en el plugin. Dependiendo de la version del servidor OAuth, ser· el tratamiento que se le realizar·n a los
+    * en el plugin. Dependiendo de la version del servidor OAuth, ser√° el tratamiento que se le realizar√°n a los
     * parametros para luego ser enviados. 
     *
     * @access public
@@ -694,7 +693,7 @@ class eslip_oauth extends Eslip_protocol
     * @access public
 	* @throws EslipException Si la peticion de token de acceso fue denegada o no autorizada
 	* @throws EslipException Si en la respuesta a la peticion de token de acceso no viene el token de acceso
-	* @throws EslipException Si expirÛ el token de acceso obtenido
+	* @throws EslipException Si expir√≥ el token de acceso obtenido
 	* @throws EslipException Si el servidor OAuth del proveedor de identidad posee una version no soportada por el plugin
     * @return boolean TRUE si el procesamiento se realiza correctamente y no ocurre ningun error
     */	
@@ -706,13 +705,13 @@ class eslip_oauth extends Eslip_protocol
 			case 1:
 				$one_a = ($this->oauth_version === '1.0a');
 
-				$access_token = $this->GetAccessToken();  // El access token se guarda en la sesion, nos fijamos si est· ahÌ
+				$access_token = $this->GetAccessToken();  // El access token se guarda en la sesion, nos fijamos si est√° ah√≠
 
 				if(IsSet($access_token['authorized']) && IsSet($access_token['value']))
 				{
 					$expired = (IsSet($access_token['expiry']) && strcmp($access_token['expiry'], gmstrftime('%Y-%m-%d %H:%M:%S')) <= 0);
 					
-					if(!$access_token['authorized']	|| $expired) // Si la que tenemos no est· autorizada o ya expirÛ
+					if(!$access_token['authorized']	|| $expired) // Si la que tenemos no est√° autorizada o ya expir√≥
 					{
 						$request_token = $this->GetRequestToken(); // Nos fijamos si viene en la URL
 										
@@ -733,7 +732,7 @@ class eslip_oauth extends Eslip_protocol
 						{
 							$access_token = array();  // Restablecemos el estado porque el token no coincide con el obtenido anteriormente
 						}
-						else // Si vino el mismo pero no est· autorizado o ya expiro, entonces pedimos uno nuevo
+						else // Si vino el mismo pero no est√° autorizado o ya expiro, entonces pedimos uno nuevo
 						{
 							$url = $this->access_token_url;
 							
@@ -804,7 +803,7 @@ class eslip_oauth extends Eslip_protocol
 				}
 				else
 				{
-					$access_token = array(); // El token de acceso no est· establecido
+					$access_token = array(); // El token de acceso no est√° establecido
 				}
 				
 				if(empty($access_token))
@@ -848,7 +847,7 @@ class eslip_oauth extends Eslip_protocol
 
 			case 2:
 								
-				$access_token = $this->GetAccessToken();  // El access token se guarda en la sesion, nos fijamos si est· ahÌ
+				$access_token = $this->GetAccessToken();  // El access token se guarda en la sesion, nos fijamos si est√° ah√≠
 				
 				// Chequeamos si esta seteado el access token	
 				if(IsSet($access_token['value'])) 
@@ -877,7 +876,7 @@ class eslip_oauth extends Eslip_protocol
 				{
 					$code = $this->GetRequestCode();
 						
-					if(strlen($code) == 0) // Si el usuario no aceptÛ
+					if(strlen($code) == 0) // Si el usuario no acept√≥
 					{
 						$authorization_error = $this->GetRequestError();
 	

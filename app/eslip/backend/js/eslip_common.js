@@ -243,7 +243,7 @@ function updateLoginWidgetPreview(data){
         buttonLabel: showLabel
     };
 
-    renderWidget(data);
+    ESLIP.renderWidget(data);
 
     preventLoginButtonClick();
 }

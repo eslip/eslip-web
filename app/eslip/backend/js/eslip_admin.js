@@ -353,7 +353,7 @@ function loadLoginWidgetContentCallback(data){
 
 	bindLoginWidgetEvents(data);
 
-	renderWidget(data);
+	ESLIP.renderWidget(data);
 
 	preventLoginButtonClick();
 }
@@ -765,7 +765,7 @@ function buttonStylePreview(id, label, element){
 		button.width = '100%';
     	button.showLabel = true;
 
-		var $a = '<div id="ESLIP_Plugin">' + buttonStyleElement(button) + '</div>';
+		var $a = '<div id="ESLIP_Plugin">' + ESLIP.buttonStyleElement(button) + '</div>';
 		$a = $($a);
 		element.html($a);
 
@@ -894,7 +894,7 @@ function initDataTableIdsButtons(data){
             		width: '100%',
             		showLabel: true
             	};
-            	return '<div id="ESLIP_Plugin">' + buttonStyleElement(button) + '</div>';
+            	return '<div id="ESLIP_Plugin">' + ESLIP.buttonStyleElement(button) + '</div>';
             },
 			"aTargets": [ 1 ]
 		},{

@@ -156,7 +156,7 @@ function close_and_redirect_parent_window($url)
 * Convierte un objeto SimpleXMLElement en un objeto StdClass
 *
 * @access public
-* @param object Objeto SimpleXMLElement a convertir
+* @param object $simple_xml_element Objeto SimpleXMLElement a convertir
 * @return object Objeto creado
 * @todo Hacer la funcion recursiva por si hay objetos SimpleXMLElement adentro
 */

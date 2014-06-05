@@ -385,7 +385,7 @@ function initLoginWidget(data){
 
 	bindLoginWidgetPreviewEvents(data);
 
-	renderWidget(data);
+	ESLIP.renderWidget(data);
 
 	preventLoginButtonClick();
 
