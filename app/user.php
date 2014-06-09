@@ -2,7 +2,17 @@
 
 session_start();
 
-echo json_encode($_SESSION);
+$userData = '';
+if ( isset($_SESSION['ESLIP_USER_DATA']) ){
+    $userData = $_SESSION['ESLIP_USER_DATA'];
+}
+
+$data = array(
+    'user' => $userData
+);
+
+
+echo json_encode($data);
 
 exit;
 

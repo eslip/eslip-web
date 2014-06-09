@@ -4,13 +4,27 @@ app.controller('DemoCtrl', function (DemoService, $scope){
 
     $scope.user;
 
-    var userPromise = DemoService.getUser();
+    $scope.logout = function(){
 
-    userPromise.then(function(data){
-        $scope.user = data;
-    });
+        var logoutPromise = DemoService.logout();
 
-    // iniciar el ESLIP Plugin
-    ESLIP.init();
+        logoutPromise.then(function(data){
+            $scope.user = '';
+        });
+    };
+
+    function init(){
+        var userPromise = DemoService.getUser();
+
+        userPromise.then(function(data){
+            $scope.user = data.user;
+        });
+
+        // iniciar el ESLIP Plugin
+        ESLIP.init();
+    }
+
+    // init controller
+    init();
 
 });

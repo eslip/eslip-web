@@ -1,4 +1,6 @@
 {
-    "name": "Nicolas",
-    "email": "nburghi@lala.com"
+    "user": {
+        "name": "Nicolas",
+        "email": "nburghi@lala.com"
+    }
 }

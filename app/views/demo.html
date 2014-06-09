@@ -1,10 +1,17 @@
-<div class="row marketing" ng-init="ESLIP.init()" ng-hide="user">
+<div class="row marketing" ng-init="ESLIP.init()">
+    <a class="pull-right" ng-click="logout()" ng-show="user">
+        <span class="glyphicon glyphicon-off"></span>
+        &nbsp;Cerrar Sessi&oacute;n
+    </a>
+
     <h3>Demo</h3>
-    <div id="ESLIP_Plugin"></div>
+    
+    <div id="ESLIP_Plugin" ng-hide="user"></div>
+
 </div>
 
 <script type="text/javascript" src="eslip/frontend/eslip_plugin.js" autoInit="false"></script>
 
-<div class="well">
-    {{user | json}}
+<div class="well" ng-show="user">
+    <pre>{{user | json}}</pre>
 </div>
