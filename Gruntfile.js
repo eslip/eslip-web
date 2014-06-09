@@ -159,6 +159,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '!<%= yeoman.dist %>/images/eslip-icono.png',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
@@ -257,7 +258,7 @@ module.exports = function (grunt) {
             '*.php',
             'views/{,*/}*.html',
             'bower_components/**/*',
-            'images/{,*/}*.{webp}',
+            'images/{,*/}*.{webp,ico}',
             'fonts/*',
             'eslip/**/*'
           ]
