@@ -13,12 +13,12 @@
         <selected>0</selected>
       </language>
     </languages>
-    <pluginUrl>http://localhost/eslip-plugin/eslip/</pluginUrl>
-    <callbackUrl>http://localhost/eslip-plugin/example/login.php</callbackUrl>
-    <siteUrl>http://localhost/eslip-plugin/example/</siteUrl>
+    <pluginUrl>http://eslip.com.ar/eslip/</pluginUrl>
+    <callbackUrl>http://eslip.com.ar/#/demo</callbackUrl>
+    <siteUrl>http://eslip.com.ar/</siteUrl>
     <adminUser>nicolas</adminUser>
     <adminPass>3adb6313def794171d0e53d9d2a8b2fde64cf9e7</adminPass>
-    <runWizard>1</runWizard>
+    <runWizard>0</runWizard>
     <loginWidget>
       <widgetWidth>500px</widgetWidth>
       <widgetRows>0</widgetRows>
@@ -47,8 +47,8 @@
       <accessTokenUrl>https://graph.facebook.com/oauth/access_token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>586708388078241</clientId>
-      <clientSecret>85a6de0087d2d9f9adcc4b150a2c98cd</clientSecret>
+      <clientId>1432315583695252</clientId>
+      <clientSecret>3ba71d68ce1d4e6d26db8399126ea353</clientSecret>
       <scope>email</scope>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -66,8 +66,8 @@
       <accessTokenUrl>https://api.twitter.com/oauth/access_token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>1</urlParameters>
-      <clientId>wmOE1qpl4IaDEt3uiBrX9g</clientId>
-      <clientSecret>wyz5POiQUe8DekJ2tllmJd4ujiHwJihsnXf8Gpqq6A</clientSecret>
+      <clientId>BkfxODgYiT71CwLfOx7QHVy16</clientId>
+      <clientSecret>u1nPArSsSJeuhFvVogmgdW0zSUUgnYFrmSUxnb8JUz6iCVglqZ</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -85,8 +85,8 @@
       <accessTokenUrl>https://api.login.yahoo.com/oauth/v2/get_token</accessTokenUrl>
       <authorizationHeader>0</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>dj0yJmk9U0tVNXFnVFR0dlFtJmQ9WVdrOWNWRTNZWHBsTlRnbWNHbzlNVGt4TXpRMk5URTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1hYQ--</clientId>
-      <clientSecret>ad8f15daa63193c6878c3390e4745d3c9a3200ed</clientSecret>
+      <clientId>dj0yJmk9V0xUdDZ5Um9PWnl2JmQ9WVdrOWVraERaR2w1TkcwbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD01OQ--</clientId>
+      <clientSecret>ce11b178c57b86923ad287a7a0822c7881323450</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>1</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName>xoauth_yahoo_guid</accessTokenExtraParameterName>
@@ -104,8 +104,8 @@
       <accessTokenUrl>https://api.dropbox.com/1/oauth/access_token</accessTokenUrl>
       <authorizationHeader>0</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>ia0i2mutm4gxpkz</clientId>
-      <clientSecret>im6osgjkhlvazwa</clientSecret>
+      <clientId>w0651vor5vq5bsl</clientId>
+      <clientSecret>mjb4uf2emk2u073</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -123,8 +123,8 @@
       <accessTokenUrl>http://www.flickr.com/services/oauth/access_token</accessTokenUrl>
       <authorizationHeader>0</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>723b9981f91c69c305260fe274009a0f</clientId>
-      <clientSecret>8234f096d7bcaf14</clientSecret>
+      <clientId>6d2b0466a79389004fbe1cbe0c6a3cc3</clientId>
+      <clientSecret>2870f36d744c76c8</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -142,8 +142,8 @@
       <accessTokenUrl>https://foursquare.com/oauth2/access_token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>A3YRKN4IX24XJLE1AS5SULAG15V40SN3PA0WXEH3R3EGIOSG</clientId>
-      <clientSecret>RZZK25SCURNKX1VLWLXK0HPZDERNO4YNQYHE5ZTTDBTXJWNC</clientSecret>
+      <clientId>22Q15ZGPKY0DXIZENFDNR0F1CGIM2PTBMJYXUNNZC1JV0ORT</clientId>
+      <clientSecret>M20NS5OP20XNUVNBFWCSP13EGKBKR3AUTCB3XKWSOPFPZ4WH</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -161,8 +161,8 @@
       <accessTokenUrl>https://github.com/login/oauth/access_token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>ac07e07465abe8e7b661</clientId>
-      <clientSecret>f35d0d3b799019810d2bcd9a114cdda12ae34d3c</clientSecret>
+      <clientId>007c18256b7f3f4466ed</clientId>
+      <clientSecret>5e5fcd6592c9b887d3e5080c6c6fce96e41db3e5</clientSecret>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -176,17 +176,17 @@
       <active>1</active>
       <oauth>2.0</oauth>
       <requestTokenUrl/>
-      <dialogUrl>https://accounts.google.com/o/oauth2/auth?response_type=code&amp;client_id={CLIENT_ID}&amp;redirect_uri={REDIRECT_URI}&amp;scope={SCOPE}&amp;state={STATE}</dialogUrl>
+      <dialogUrl>https://accounts.google.com/o/oauth2/auth?response_type=code&amp;client_id={CLIENT_ID}&amp;redirect_uri={REDIRECT_URI}&amp;scope={SCOPE}&amp;state={STATE}&amp;approval_prompt=force</dialogUrl>
       <accessTokenUrl>https://accounts.google.com/o/oauth2/token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>629599750618-ed6ms1csot717ges9ov77htbtmocmh9f.apps.googleusercontent.com</clientId>
-      <clientSecret>_IU9N28_pj8Cr3gRm0r4oNhn</clientSecret>
-      <scope>https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile</scope>
+      <clientId>730278102443-44o39eubt7miqeiqdvct0601veab2hdt.apps.googleusercontent.com</clientId>
+      <clientSecret>dUn-G6udZrOO8x1u9duCfOhp</clientSecret>
+      <scope>https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email</scope>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
       <userDataUrl>https://www.googleapis.com/oauth2/v1/userinfo</userDataUrl>
-      <userDataIdKey></userDataIdKey>
+      <userDataIdKey/>
       <apiCallParameters>access_token={ACCESS_TOKEN}</apiCallParameters>
     </identityProvider>
     <identityProvider id="linkedin">
@@ -199,8 +199,8 @@
       <accessTokenUrl>https://api.linkedin.com/uas/oauth/accessToken</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>756e3ohl654af3</clientId>
-      <clientSecret>9x8AMSLeZbyNY0ZO</clientSecret>
+      <clientId>7528bjzjmlx8yk</clientId>
+      <clientSecret>OC3OQRZARJGd4rkr</clientSecret>
       <scope>r_fullprofile</scope>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
@@ -218,13 +218,13 @@
       <accessTokenUrl>https://login.live.com/oauth20_token.srf</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId>000000004C10E300</clientId>
-      <clientSecret>IIH-dVSS9fAibItNQuQubJRGLb6lgsga</clientSecret>
+      <clientId>000000004012127C</clientId>
+      <clientSecret>1NFOMUO98J6K1fvB06obJoo0YbBvhngZ</clientSecret>
       <scope>wl.basic wl.emails</scope>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
       <userDataUrl>https://apis.live.net/v5.0/me</userDataUrl>
-      <userDataIdKey></userDataIdKey>
+      <userDataIdKey/>
       <apiCallParameters>access_token={ACCESS_TOKEN}</apiCallParameters>
     </identityProvider>
     <identityProvider id="tumblr">
@@ -237,13 +237,13 @@
       <accessTokenUrl>http://www.tumblr.com/oauth/access_token</accessTokenUrl>
       <authorizationHeader>1</authorizationHeader>
       <urlParameters>0</urlParameters>
-      <clientId></clientId>
-      <clientSecret></clientSecret>
+      <clientId/>
+      <clientSecret/>
       <scope/>
       <hasAccessTokenExtraParameter>0</hasAccessTokenExtraParameter>
       <accessTokenExtraParameterName/>
       <userDataUrl>http://api.tumblr.com/v2/user/info</userDataUrl>
-      <userDataIdKey></userDataIdKey>
+      <userDataIdKey/>
       <apiCallParameters>access_token={ACCESS_TOKEN}</apiCallParameters>
     </identityProvider>
   </identityProviders>
