@@ -160,6 +160,9 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '!<%= yeoman.dist %>/images/eslip-icono.png',
+            '!<%= yeoman.dist %>/images/eslip-icono16x16.png',
+            '!<%= yeoman.dist %>/images/eslip-icono64x64.png',
+            '!<%= yeoman.dist %>/images/favicon.jpg',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
         }
