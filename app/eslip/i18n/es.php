@@ -34,7 +34,7 @@ define("Login", "Iniciar Sesi&oacute;n");
 
 //menu
 define("ConfigUser","Configuraciones de Usuario");
-define("LanguagesConfig", "Configuración de Idiomas");
+define("LanguagesConfig", "Configuraci&oacute;n de Idiomas");
 define("LoginWidget", "Widget de Social Login");
 define("IdProvidersButtons", "Botones de Proveedores");
 

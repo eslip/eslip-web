@@ -183,3 +183,31 @@ function SimpleXMLElementToObject($simple_xml_element)
     }
     return $object;
 }
+
+/**
+* Funcion para obtener el parametro referer, el cual es la pagina desde donde proviene el intento de identificacion
+*
+* @access public
+* @return string Parametro referer
+*/
+
+function get_referer()
+{
+    session_start();
+    $_SESSION['ESLIP']['referer'] = (IsSet($_GET['referer'])) ? $_GET['referer'] : ((IsSet($_SESSION['ESLIP']['referer'])) ? $_SESSION['ESLIP']['referer'] : '');
+    return $_SESSION['ESLIP']['referer'];
+}
+
+/**
+* Funcion para obtener el parametro server, el cual es el proveedor de identidad elegido para realizar la identificacion
+*
+* @access public
+* @return string Parametro server
+*/
+
+function get_server()
+{
+    session_start();
+    $_SESSION['ESLIP']['server'] = (IsSet($_GET['server'])) ? $_GET['server'] : ((IsSet($_SESSION['ESLIP']['server'])) ? $_SESSION['ESLIP']['server'] : '');
+    return $_SESSION['ESLIP']['server'];
+}

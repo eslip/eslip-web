@@ -14,6 +14,7 @@ $_SESSION['referrer'] = currentPageUrl();
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>ESLIP Admin</title>
 
+	<link rel="shortcut icon" href="favicon.ico" />
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/sidebar-bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/dataTables.bootstrap.css">

@@ -233,9 +233,7 @@ class eslip_oauth extends Eslip_protocol
 
 		$this->eslip = $eslip;
 
-		$eslip_data = base64url_encode(json_encode(array('server' => $this->server, 'referer' => $this->referer )));
-
-		$this->redirect_uri = str_replace('{ESLIP_DATA}', $eslip_data, (string)$this->eslip->configuration->pluginUrl."eslip_oauth.php?eslip_data={ESLIP_DATA}" );
+		$this->redirect_uri = (string)$this->eslip->configuration->pluginUrl."eslip_oauth.php";
 
 		$identity_provider = $this->eslip->xmlApi->getElementById("identityProvider", $this->server);
 
@@ -469,6 +467,11 @@ class eslip_oauth extends Eslip_protocol
 		$config['curl_returntransfer'] = TRUE;
 		
 		$config['curl_httpheader'][] = 'Accept: */*';
+
+        if ($method == 'POST')
+        {
+            $config['curl_httpheader'][] = 'Content-type: application/x-www-form-urlencoded';
+        }
 			
 		if(IsSet($oauth))
 		{
@@ -536,7 +539,13 @@ class eslip_oauth extends Eslip_protocol
 					$url = $this->my_http_build_query($values, '&', $url, '?');
 				}
 			}
-		}
+            
+            $config['parameters'] = $parameters;
+        }
+        else
+        {
+            $config['parameters'] = $this->my_http_build_query($parameters, '&', '', '');
+        }
 
 		$config['url'] = $url;
 		$config['parameters'] = $parameters;
@@ -835,7 +844,7 @@ class eslip_oauth extends Eslip_protocol
 				}
 				
 				$url = $this->dialog_url;
-				$url .= '?oauth_token='.$access_token['value'];
+				$url .= '?oauth_token='.$access_token['value'].'&perms=read';
 				if(!$one_a)
 				{
 					$url .= '&oauth_callback='.UrlEncode($this->redirect_uri);
@@ -954,17 +963,8 @@ class eslip_oauth extends Eslip_protocol
 	}
 }
 
-if (IsSet($_GET['eslip_data']))
-{
-	$aux = json_decode(base64url_decode($_GET['eslip_data']));
-	$referer = $aux->referer;
-	$server = $aux->server;
-}
-else
-{
-	$referer = (IsSet($_GET['referer'])) ? $_GET['referer'] : '';
-	$server = (IsSet($_GET['server'])) ? $_GET['server'] : '';
-}
+$referer = get_referer();
+$server = get_server();
 
 try
 {

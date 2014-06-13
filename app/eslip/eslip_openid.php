@@ -195,9 +195,6 @@ class eslip_openid extends Eslip_protocol
     * @access public
     * @param object $eslip Instancia de la clase Eslip
     * @param string $referer URL de la cual proviene el llamado al plugin para luego ser enviado de vuelta 
-    * @throws EslipException Si el constructor no recibe el parametro $eslip_data
-    * @throws EslipException Si el constructor no recibe el parametro $identity_provider
-    * @throws EslipException Si el constructor no recibe el parametro $site_url
     */
 
     public function __construct($eslip, $referer)
@@ -208,9 +205,7 @@ class eslip_openid extends Eslip_protocol
 
         $this->referer = $referer;
 
-        $eslip_data = base64url_encode(json_encode(array('referer' => $this->referer )));
-
-        $this->returnUrl = str_replace('{ESLIP_DATA}', $eslip_data, (string)$this->eslip->configuration->pluginUrl."eslip_openid.php?eslip_data={ESLIP_DATA}" );
+        $this->returnUrl = (string)$this->eslip->configuration->pluginUrl."eslip_openid.php";
 
         $identity_provider = $this->eslip->xmlApi->getElementById("identityProvider",'openid');
 
@@ -1129,15 +1124,7 @@ class eslip_openid extends Eslip_protocol
     }
 }
 
-if (IsSet($_GET['eslip_data']))
-{
-    $aux = json_decode(base64url_decode($_GET['eslip_data']));
-    $referer = $aux->referer;
-}
-else
-{
-    $referer = (IsSet($_GET['referer'])) ? $_GET['referer'] : '';
-}
+$referer = get_referer();
 
 try
 {
@@ -1159,9 +1146,7 @@ catch (EslipException $e)
 }
 catch (OpenIDException $e)
 {
-    $eslip_data = base64url_encode(json_encode(array('referer' => $referer )));
-
-    $returnUrl = str_replace('{ESLIP_DATA}', $eslip_data, (string)$eslip->configuration->pluginUrl."eslip_openid.php?eslip_data={ESLIP_DATA}" );
+    $returnUrl = (string)$eslip->configuration->pluginUrl."eslip_openid.php";
 
     $openid_form_url = $eslip->configuration->pluginUrl."frontend/openid_form.php?return_url=".$returnUrl."&error=".$e->getMessage();
 

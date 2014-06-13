@@ -27,6 +27,7 @@ if(isset($_SESSION['referrer'])){
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>ESLIP Login</title>
 
+	<link rel="shortcut icon" href="favicon.ico" />
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
 	

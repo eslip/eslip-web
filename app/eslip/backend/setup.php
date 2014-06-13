@@ -29,6 +29,7 @@ if ( ! $isAuthenticated && ! $runWizard){
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>ESLIP Setup</title>
 
+	<link rel="shortcut icon" href="favicon.ico" />
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap-wizard.css">
 	<link type="text/css" rel="stylesheet" href="css/onoff_switch.css">
