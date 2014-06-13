@@ -548,7 +548,6 @@ class eslip_oauth extends Eslip_protocol
         }
 
 		$config['url'] = $url;
-		$config['parameters'] = $parameters;
 
 		$curl_response = $this->request_curl($config);
 		

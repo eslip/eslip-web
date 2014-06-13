@@ -193,7 +193,10 @@ function SimpleXMLElementToObject($simple_xml_element)
 
 function get_referer()
 {
-    session_start();
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     $_SESSION['ESLIP']['referer'] = (IsSet($_GET['referer'])) ? $_GET['referer'] : ((IsSet($_SESSION['ESLIP']['referer'])) ? $_SESSION['ESLIP']['referer'] : '');
     return $_SESSION['ESLIP']['referer'];
 }
@@ -207,7 +210,10 @@ function get_referer()
 
 function get_server()
 {
-    session_start();
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     $_SESSION['ESLIP']['server'] = (IsSet($_GET['server'])) ? $_GET['server'] : ((IsSet($_SESSION['ESLIP']['server'])) ? $_SESSION['ESLIP']['server'] : '');
     return $_SESSION['ESLIP']['server'];
 }

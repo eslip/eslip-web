@@ -43,7 +43,7 @@ if (IsSet($_GET['data']))
 			<input type="hidden" name="user" value='<?php echo json_encode($data->user); ?>' >
 			<input type="hidden" name="user_identification" value='<?php echo ($data->user_identification); ?>' >
 			<?php }else{ ?>
-			<input type="hidden" name="error" value="<?php echo $data->error; ?>" >
+			<input type="hidden" name="error" value='<?php echo $data->error; ?>' >
 			<?php } ?>
 		</form>
 	</body>

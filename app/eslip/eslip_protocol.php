@@ -69,9 +69,12 @@ class eslip_protocol {
             throw new EslipException(CurlError);
         }
 
-        if( ! session_start())
+        if(!isset($_SESSION))
         {
-            throw new EslipException(SessionError);
+            if( ! session_start())
+            {
+                throw new EslipException(SessionError);
+            }
         }
     }
 
