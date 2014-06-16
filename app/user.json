@@ -1,6 +1,12 @@
 {
-    "user": {
-        "name": "Nicolas",
-        "email": "nburghi@lala.com"
+    "eslip": {
+        "user": {
+            "name": "Nicolas",
+            "email": "nburghi@lala.com"
+        },
+        "user_identification": "Nicolas ID",
+        "status": "SUCCESS",
+        "server": "el_server",
+        "referer": "un_referer" 
     }
 }

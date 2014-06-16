@@ -3,12 +3,12 @@
 session_start();
 
 $userData = '';
-if ( isset($_SESSION['ESLIP_USER_DATA']) ){
-    $userData = $_SESSION['ESLIP_USER_DATA'];
+if ( isset($_SESSION['ESLIP']) ){
+    $eslipData = $_SESSION['ESLIP'];
 }
 
 $data = array(
-    'user' => $userData
+    'eslip' => $eslipData
 );
 
 

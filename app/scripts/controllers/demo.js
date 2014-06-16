@@ -2,22 +2,22 @@
 
 app.controller('DemoCtrl', function (DemoService, $scope){
 
-    $scope.user;
+    $scope.eslip = {};
 
     $scope.logout = function(){
 
         var logoutPromise = DemoService.logout();
 
         logoutPromise.then(function(data){
-            $scope.user = '';
+            $scope.eslip = {};
         });
     };
 
     function init(){
-        var userPromise = DemoService.getUser();
+        var eslipDataPromise = DemoService.getEslipData();
 
-        userPromise.then(function(data){
-            $scope.user = data.user;
+        eslipDataPromise.then(function(data){
+            $scope.eslip = data.eslip;
         });
 
         // iniciar el ESLIP Plugin

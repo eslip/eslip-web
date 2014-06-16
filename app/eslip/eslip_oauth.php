@@ -678,10 +678,12 @@ class eslip_oauth extends Eslip_protocol
 
 		$user = $this->GetUserData();
 
-		$this->StoreUserDataInSession($user, 'oauth');
+        $user_identification = $this->GetUserId($user);
+
+		$this->StoreUserDataInSession($user, 'oauth', $user_identification);
 
 		$return = array('user' => $user,
-						'user_identification' => $this->GetUserId($user),
+						'user_identification' => $user_identification,
 						'server' => $this->server, 
 						'referer' => $this->referer,
 						'state' => 'success',
@@ -971,6 +973,8 @@ try
 }
 catch (EslipException $e)
 {
+    save_error_in_session($e->getMessage());
+
 	$return = array('error' => $e->getMessage(), 
 					'server' => $server, 
 					'referer' => $referer,

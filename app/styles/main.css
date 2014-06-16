@@ -110,3 +110,25 @@ div.menu li{
     border-bottom: 0;
   }
 }
+
+/* Demo */
+
+
+.demoContainer .sectionTitle{
+  margin-top: 0;
+}
+
+.demoContainer .cursorPointer{
+  cursor: pointer;
+}
+
+.demoContainer .well pre{
+  background: none;
+  border: none;
+  color: white;
+  margin-bottom: 0;
+}
+
+.demoContainer #ESLIP_Plugin{
+  margin: 0 auto;
+}

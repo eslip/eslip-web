@@ -99,10 +99,11 @@ class eslip_protocol {
     *
     * @param array $user_data Arreglo con los datos del usuario
     * @param string $type que puede tener los valores 'openid' o 'oauth' para identificar que protocolo se utilizó
+    * @param string $user_identification Dato que identifica al usuario
     * @access public
     */
 
-    public function StoreUserDataInSession($user_data, $type)
+    public function StoreUserDataInSession($user_data, $type, $user_identification)
     {
         if ($type == 'openid')
         {   
@@ -113,7 +114,11 @@ class eslip_protocol {
             unset($_SESSION['OPENID']);
         }
 
-        $_SESSION['ESLIP_USER_DATA'] = $user_data;
+        unset($_SESSION['ESLIP']['error']);
+
+        $_SESSION['ESLIP']['status'] = 'success';
+        $_SESSION['ESLIP']['user'] = $user_data;
+        $_SESSION['ESLIP']['user_identification'] = $user_identification;
     }
 
     /**

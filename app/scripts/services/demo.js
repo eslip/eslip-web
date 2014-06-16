@@ -2,12 +2,12 @@
 
 app.service('DemoService', function ($resource){
 
-    var UserService = $resource('/user.php');
+    var EslipService = $resource('/user.php');
     var LogoutService = $resource('/logout.php');
 
-    this.getUser = function(){
+    this.getEslipData = function(){
 
-        return UserService.get().$promise;
+        return EslipService.get().$promise;
         
     };
 

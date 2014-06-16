@@ -840,11 +840,13 @@ class eslip_openid extends Eslip_protocol
         }
         
         $user = $this->getAttributes();
+
+        $user_identification = $user['id'];
         
-        $this->StoreUserDataInSession($user, 'openid');
+        $this->StoreUserDataInSession($user, 'openid', $user_identification);
 
         $return = array('user' => $user,
-                        'user_identification' => $user['id'],
+                        'user_identification' => $user_identification,
                         'server' => 'openid', 
                         'referer' => $this->referer,
                         'state' => 'success',
@@ -1125,6 +1127,7 @@ class eslip_openid extends Eslip_protocol
 }
 
 $referer = get_referer();
+$server = get_server();
 
 try
 {
@@ -1132,6 +1135,8 @@ try
 }
 catch (EslipException $e)
 {
+    save_error_in_session($e->getMessage());
+
     $return = array('error' => $e->getMessage(), 
                             'server' => 'openid', 
                             'referer' => $referer,

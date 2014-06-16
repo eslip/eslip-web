@@ -217,3 +217,22 @@ function get_server()
     $_SESSION['ESLIP']['server'] = (IsSet($_GET['server'])) ? $_GET['server'] : ((IsSet($_SESSION['ESLIP']['server'])) ? $_SESSION['ESLIP']['server'] : '');
     return $_SESSION['ESLIP']['server'];
 }
+
+/**
+* Funcion para almacenar en la session la descripcion del error si es que se produce alguno
+*
+* @access public
+* @param string $error Cadena con la descripcion del error
+*/
+
+function save_error_in_session($error)
+{
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+    unset($_SESSION['ESLIP']['user']);
+    unset($_SESSION['ESLIP']['user_identification']);
+    $_SESSION['ESLIP']['status'] = 'error';
+    $_SESSION['ESLIP']['error'] = $error;
+}

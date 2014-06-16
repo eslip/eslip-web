@@ -243,7 +243,7 @@ var ESLIP = function(){
     function clickLogin(server){
         var referer = window.location.href;
         if (server == 'openid'){
-            var url = PLUGIN_URL+"eslip_openid.php?referer="+encodeURIComponent(referer);
+            var url = PLUGIN_URL+"eslip_openid.php?server=openid&referer="+encodeURIComponent(referer);
         }
         else{
             var url = PLUGIN_URL+"eslip_oauth.php?server="+server+"&referer="+encodeURIComponent(referer);    

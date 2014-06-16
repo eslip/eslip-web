@@ -1,17 +1,53 @@
-<div class="row marketing" ng-init="ESLIP.init()">
-    <a class="pull-right" ng-click="logout()" ng-show="user">
-        <span class="glyphicon glyphicon-off"></span>
-        &nbsp;Cerrar Sessi&oacute;n
-    </a>
+<div class="demoContainer">
 
-    <h3>Demo</h3>
-    
-    <div id="ESLIP_Plugin" ng-hide="user"></div>
+    <div class="row marketing">
 
-</div>
+        <a class="cursorPointer pull-right hidden" ng-click="logout()" ng-class="{hidden: !eslip.user}">
+            <span class="glyphicon glyphicon-off"></span>
+            &nbsp;Cerrar Sessi&oacute;n
+        </a>
 
-<script type="text/javascript" src="eslip/frontend/eslip_plugin.js" autoInit="false"></script>
+        <a class="cursorPointer pull-right hidden" ng-click="logout()" ng-class="{hidden: !eslip.error}">
+            <span class="glyphicon glyphicon-repeat"></span>
+            &nbsp;Volver a intentar
+        </a>
 
-<div class="well hidden" ng-class="{hidden: !user}">
-    <pre>{{user | json}}</pre>
+        <h3 class="sectionTitle">Demo</h3>
+        
+        <div id="ESLIP_Plugin" ng-hide="eslip.user || eslip.error"></div>
+
+        <script type="text/javascript" src="eslip/frontend/eslip_plugin.js" autoInit="false"></script>
+
+        <div class="hidden" ng-class="{hidden: !eslip.user}">
+
+            <div class="alert alert-success">
+              <strong>Hola <i>{{eslip.user_identification}}</i>!</strong> Gracias por probar ESLIP!
+            </div>
+
+            <p></p>
+
+            <h4>Recursos obtenidos del usuario: </h4>
+            <div class="well">
+                <pre>{{eslip.user | json}}</pre>
+            </div>
+
+        </div>
+
+
+        <div class="hidden" ng-class="{hidden: !eslip.error}">
+
+            <div class="alert alert-danger">
+              <strong>Error!</strong> Ha ocurrido un error al identificarse con ESLIP.
+            </div>
+
+            <p></p>
+
+            <h4>Datos del error: </h4>
+            <div class="well">
+                <pre>{{eslip.error}}</pre>
+            </div>
+
+        </div>
+
+    </div>
 </div>
