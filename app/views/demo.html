@@ -12,6 +12,6 @@
 
 <script type="text/javascript" src="eslip/frontend/eslip_plugin.js" autoInit="false"></script>
 
-<div class="well" ng-show="user">
+<div class="well hidden" ng-class="{hidden: !user}">
     <pre>{{user | json}}</pre>
 </div>
