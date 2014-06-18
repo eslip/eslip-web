@@ -111,8 +111,19 @@ div.menu li{
   }
 }
 
-/* Demo */
+/* fix for large dt element */
 
+.dl-horizontal dt {
+  white-space: normal;
+  width: 240px;
+}
+
+.dl-horizontal dd {
+  margin-bottom: 15px;
+  margin-left: 260px;
+}
+
+/* Demo */
 
 .demoContainer .sectionTitle{
   margin-top: 0;
