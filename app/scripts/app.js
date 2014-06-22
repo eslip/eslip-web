@@ -4,7 +4,8 @@ var app = angular.module('eslipApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
 ]);
 
 app.config(function ($routeProvider){
