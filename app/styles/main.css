@@ -123,6 +123,13 @@ div.menu li{
   margin-left: 260px;
 }
 
+/* Applications Images */
+
+.appImg {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* Demo */
 
 .demoContainer .sectionTitle{
@@ -185,7 +192,7 @@ div.menu li{
   to    { transform: translateY(0); }
 }
 
-.ng-view {
+/*.ng-view {
   min-height: 600px;
 }
 .ng-enter {
@@ -195,4 +202,4 @@ div.menu li{
 .ng-leave {
   animation: rotateFall 0.5s both ease-in;
   z-index: 9999;
-}
+}*/
