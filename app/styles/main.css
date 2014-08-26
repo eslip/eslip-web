@@ -38,6 +38,10 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+ul.large_items li{margin-top: 20px;}
+
+blockquote {font-size: 17px;}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
