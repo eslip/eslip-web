@@ -5,7 +5,8 @@
         <li ng-click="selected=3">Configuración del Plugin</li>
         <li ng-click="selected=4">Wizard de Configuración</li>
         <li ng-click="selected=5">Módulo de Administración del Plugin</li>
-        <li ng-click="selected=6">Creación de aplicaciones en proveedores de identidad</li>
+        <li ng-click="selected=6">Manejo de la informaci&oacute;n devuelta por ESLIP</li>
+        <li ng-click="selected=7">Creación de aplicaciones en proveedores de identidad</li>
     </ol>
 </div>
 
@@ -338,8 +339,52 @@
         </dl>
     </p>
 </div>
-<div id="admin" class="row marketing" ng-show="selected==6">
-    <h3>6. Creación de aplicaciones en proveedores de identidad</h3>
+
+<div id="recursos" class="row marketing" ng-show="selected==6">
+    <h3>6. Manejo de la informaci&oacute;n devuelta por ESLIP</h3>
+    <p>
+        Una vez que el proveedor de identidad devuelve los recursos solicitados, ESLIP los envía a la URL de retorno configurada por el desarrollador. 
+    </p>
+    <p>
+        A partir de aquí, los recursos del usuario obtenidos están en manos del desarrollador y será él quien decida qué hacer con ellos.
+    </p>
+    <p>
+        Dichos recursos son enviados a la URL de retorno por POST pero también son almacenados bajo la llave <code>['ESLIP']</code> en la sesión de PHP.
+    </p>
+    <p>
+        Los recursos se le envían al desarrollador dentro de una estructura de arreglo. Dicho arreglo contiene la siguiente información:
+
+        <dl class="dl-horizontal">
+            <dt>'state':</dt>
+            <dd><span class="text-success">'success'</span> | <span class="text-danger">'error'</span></dd>
+            <dt>'referer':</dt>
+            <dd>URL de la página en la que estaba el usuario y desde donde proviene el intento de identificación</dd>
+            <dt>'server':</dt>
+            <dd>Proveedor de identidad elegido por el usuario para identificarse</dd>
+        </dl>
+    </p>
+    <p>
+        Si la identificación es satisfactoria, es decir que el status es <span class="text-success">'success'</span> se incluye la siguiente información:
+
+        <dl class="dl-horizontal">
+            <dt>'user':</dt>
+            <dd>Recursos del usuario obtenidos del proveedor de identidad</dd>
+            <dt>'user_identification':</dt>
+            <dd>Identificador del usuario. La llave del recurso que se considera identificador debe ser configurada en el administrador para cada proveedor de identidad</dd>
+        </dl>
+    </p>
+    <p>
+        Si ocurre un error durante el proceso de identificación, es decir que el status es <span class="text-danger">'error'</span> se incluye la siguiente información:
+
+        <dl class="dl-horizontal">
+            <dt>'error':</dt>
+            <dd>Descripción del error</dd>
+        </dl>
+    </p>
+</div>
+
+<div id="admin" class="row marketing" ng-show="selected==7">
+    <h3>7. Creación de aplicaciones en proveedores de identidad</h3>
     
     <h4>Google</h4>
     <p>
