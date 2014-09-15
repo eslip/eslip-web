@@ -1,17 +1,41 @@
 <div class="well menu" ng-init="selected=1">
     <ol>
-        <li ng-click="selected=1">Descarga del Plugin</li>
-        <li ng-click="selected=2">Subir el Plugin al Servidor</li>
-        <li ng-click="selected=3">Configuración del Plugin</li>
-        <li ng-click="selected=4">Wizard de Configuración</li>
-        <li ng-click="selected=5">Módulo de Administración del Plugin</li>
-        <li ng-click="selected=6">Manejo de la informaci&oacute;n devuelta por ESLIP</li>
-        <li ng-click="selected=7">Creación de aplicaciones en proveedores de identidad</li>
+        <li ng-click="selected=1">Requerimientos</li>
+        <li ng-click="selected=2">Descarga del Plugin</li>
+        <li ng-click="selected=3">Subir el Plugin al Servidor</li>
+        <li ng-click="selected=4">Configuración del Plugin</li>
+        <li ng-click="selected=5">Wizard de Configuración</li>
+        <li ng-click="selected=6">Módulo de Administración del Plugin</li>
+        <li ng-click="selected=7">Manejo de la informaci&oacute;n devuelta por ESLIP</li>
+        <li ng-click="selected=8">Creación de aplicaciones en proveedores de identidad</li>
     </ol>
 </div>
 
-<div id="download" class="row marketing" ng-show="selected==1">
-    <h3>1. Descarga del Plugin</h3>
+<div id="requerimientos" class="row marketing" ng-show="selected==1">
+    <h3>1. Requerimientos</h3>
+    <ul>
+        <li>Servidor web Apache</li>
+        <li>PHP >= 5.3</li>
+    </ul>
+    <p><b>Configuraciones necesarias del servidor web Apache:</b></p>
+    <ul>
+        <li>Tener activado el módulo 'mod_rewrite'.</li>
+        <li>En el VirtualHost correspondiente:
+            <ul>
+                <li>Permitir la reescritura estableciendo la opción 'AllowOverride' en 'All'.</li>
+                <li>Asegurarse de NO incluir la opción 'Multiviews'.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><b>Modulos necesarios de PHP</b></p>
+    <ul>
+        <li>Modulo PHP SimpleXML</li>
+        <li>Modulo PHP CURL</li>
+    </ul>
+</div>
+
+<div id="download" class="row marketing" ng-show="selected==2">
+    <h3>2. Descarga del Plugin</h3>
     <p>
     Como primer paso se debe descargar la última versión del plugin ESLIP haciendo click <a ng-href="https://github.com/eslip/eslip/archive/v0.1.zip">aqu&iacute;</a> o desde <a ng-href="https://github.com/eslip/eslip">GitHub</a>. Se descargará un archivo comprimido ZIP. Una vez realizada la descarga, se procede a descomprimir el archivo.
     </p>
@@ -40,14 +64,14 @@
         Por último, en la carpeta <code>eslip/</code> se encuentra el plugin. Esta es la carpeta que se debe alojar en el sitio web donde se desea integrar el plugin.
     </p>
 </div>
-<div id="upload_to_server" class="row marketing" ng-show="selected==2">
-    <h3>2. Subir el Plugin al Servidor</h3>
+<div id="upload_to_server" class="row marketing" ng-show="selected==3">
+    <h3>3. Subir el Plugin al Servidor</h3>
     <p>
         Como se mencionó anteriormente, una vez descargado el plugin se debe proceder a colocar la carpeta <code>eslip/</code> (la cual contiene el código del plugin) en el servidor web correspondiente. Se puede alojar en cualquier ruta. Por ejemplo si se aloja en la raíz del sitio web <i>www.example.com</i> la ruta sería <i>www.example.com/eslip</i>.
     </p>
 </div>
-<div id="configuration" class="row marketing" ng-show="selected==3">
-    <h3>3. Configuración del Plugin</h3>
+<div id="configuration" class="row marketing" ng-show="selected==4">
+    <h3>4. Configuración del Plugin</h3>
     <p>
         Una vez subido el plugin al servidor, ya se encuentra apto para ser configurado. Para ello se debe escribir en la barra de direcciones del navegador la ruta donde fue ubicada la carpeta del plugin y de esta manera se accede al administrador.
     </p>
@@ -62,8 +86,8 @@
         </div>
     </p>
 </div>
-<div id="wizard" class="row marketing" ng-show="selected==4">
-    <h3>4. Wizard de Configuración</h3>
+<div id="wizard" class="row marketing" ng-show="selected==5">
+    <h3>5. Wizard de Configuración</h3>
     <h4>Selección de lenguaje</h4>
     <p>
         Como ya se mencionó, ESLIP se encuentra disponible en inglés y español, aunque es posible extender y agregar más lenguajes. Por ello, en el primer paso del wizard de configuración, se presenta ante el usuario una ventana emergente con la lista de lenguajes soportados por el plugin. En este paso se debe seleccionar el idioma de visualización que será utilizado tanto en el wizard como el administrador.
@@ -150,8 +174,8 @@
     </p>
 
 </div>
-<div id="admin" class="row marketing" ng-show="selected==5">
-    <h3>5. Módulo de Administración del Plugin</h3>
+<div id="admin" class="row marketing" ng-show="selected==6">
+    <h3>6. Módulo de Administración del Plugin</h3>
     <p>
         Como se mencionó anteriormente, para poder acceder al administrador, primero se debe ejecutar el wizard de configuración para poder establecer las credenciales de ingreso. Una vez hecho esto, en la pantalla de login del administrador se debe ingresar el nombre de usuario y la contraseña elegida.
     </p>
@@ -340,8 +364,8 @@
     </p>
 </div>
 
-<div id="recursos" class="row marketing" ng-show="selected==6">
-    <h3>6. Manejo de la informaci&oacute;n devuelta por ESLIP</h3>
+<div id="recursos" class="row marketing" ng-show="selected==7">
+    <h3>7. Manejo de la informaci&oacute;n devuelta por ESLIP</h3>
     <p>
         Una vez que el proveedor de identidad devuelve los recursos solicitados, ESLIP los envía a la URL de retorno configurada por el desarrollador. 
     </p>
@@ -383,8 +407,8 @@
     </p>
 </div>
 
-<div id="admin" class="row marketing" ng-show="selected==7">
-    <h3>7. Creación de aplicaciones en proveedores de identidad</h3>
+<div id="admin" class="row marketing" ng-show="selected==8">
+    <h3>8. Creación de aplicaciones en proveedores de identidad</h3>
     
     <h4>Google</h4>
     <p>
